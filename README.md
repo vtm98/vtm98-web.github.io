@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ניב אמירי</title>
+  <title>VTM</title>
   <style>
     body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f7fb;color:#111}
     .wrap{max-width:900px;margin:0 auto;padding:28px 16px}
@@ -23,7 +23,7 @@
   <div class="wrap">
     <div class="hero">
       <span class="tag">👋 שלום חברים!</span>
-      <h1>ניב אמירי</h1>
+      <h1>VTM</h1>
       <p>האתר שלי כרגע בשיפוצים — אבל הוא כבר באוויר. כאן יופיעו פרויקטים, קישורים ועדכונים.</p>
 
       <div class="btns">
