@@ -4,60 +4,87 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>VTM</title>
+
   <style>
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f7fb;color:#111}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:#f6f7fb;
+      color:#111;
+    }
     .wrap{max-width:900px;margin:0 auto;padding:28px 16px}
     .hero{background:#fff;border:1px solid #eee;border-radius:18px;padding:22px}
     .tag{display:inline-block;background:#eef2ff;border:1px solid #e3e8ff;padding:6px 10px;border-radius:999px;font-size:14px}
     h1{margin:12px 0 6px}
     p{margin:8px 0;line-height:1.8;color:#333}
+
+    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      border-radius:12px;
+      padding:10px 14px;
+      border:1px solid #ddd;
+      background:#fff;
+      color:#111;
+    }
+    .btn.primary{border-color:#111;background:#111;color:#fff}
+
+    /* אופציונלי: כפתור אייקון */
+    .icon-btn{
+      width:44px;height:44px;
+      display:inline-flex;align-items:center;justify-content:center;
+      border:1px solid #ddd;border-radius:12px;background:#fff;
+      text-decoration:none;
+    }
+    .icon-btn img{width:22px;height:22px;display:block}
+
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:14px}
     .card{background:#fff;border:1px solid #eee;border-radius:16px;padding:16px}
-    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .btn{display:inline-block;text-decoration:none;border-radius:12px;padding:10px 14px;border:1px solid #ddd;background:#fff;color:#111}
-    .btn.primary{border-color:#111;background:#111;color:#fff}
     footer{opacity:.7;margin-top:18px;font-size:13px}
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <div class="hero">
-      <span class="tag">👋 שלום משקיעים וסוחרים!</span>
+      <span class="tag">👋 שלום!</span>
       <h1>VTM</h1>
-      <p>האתר שלי כרגע בשיפוצים — אבל הוא כבר באוויר. כאן יופיעו פרויקטים, קישורים ועדכונים.</p>
+      <p>ברוכים הבאים לאתר שלי. כאן יהיו פרויקטים, קישורים ועדכונים.</p>
 
       <div class="btns">
-        <a class="btn primary" href="#projects">לפרויקטים</a
+        <a class="btn primary" href="#projects">לפרויקטים</a>
         <a class="btn" href="#contact">צור קשר</a>
-         <a class="btn" href="https://instagram.com/vtm_on" target="_blank" rel="noopener">אינסטגרם</a>
-        <a href="https://instagram.com/USERNAME" target="_blank" rel="noopener" aria-label="Instagram">
-  <img src="WhatsApp image 2025-12-21 at 21.29.49.jpeg.png" alt="Instagram" style="width:28px;height:28px;">
-</a>
 
+        <!-- אינסטגרם (לא רואים URL, רק טקסט) -->
+        <a class="btn" href="https://instagram.com/vtm_on" target="_blank" rel="noopener">אינסטגרם</a>
+
+        <!-- אם העלית קובץ בשם instagram.png ורוצה אייקון, בטל הערה בשורה הבאה -->
+        <!-- <a class="icon-btn" href="https://instagram.com/vtm_on" target="_blank" rel="noopener" aria-label="Instagram"><img src="instagram.png" alt=""></a> -->
       </div>
     </div>
 
     <div class="grid" id="projects">
       <div class="card">
         <h2>📌 פרויקט 1</h2>
-        <p>תיאור קצר (שורה-שתיים) על מה עשית.</p>
-        <a class="btn" href="#" onclick="return false;">קישור (עוד מעט)</a>
+        <p>תיאור קצר…</p>
+        <a class="btn" href="#" onclick="return false;">קישור (בקרוב)</a>
       </div>
 
       <div class="card">
         <h2>📌 פרויקט 2</h2>
-        <p>תיאור קצר נוסף.</p>
-        <a class="btn" href="https://www.instagram.com/vtm_on?igsh=dWtuYjI1bHdzYnh2&utm_source=qr" onclick="return false;">קישור (עוד מעט)</a>
+        <p>תיאור קצר…</p>
+        <a class="btn" href="#" onclick="return false;">קישור (בקרוב)</a>
       </div>
 
       <div class="card" id="contact">
         <h2>✉️ יצירת קשר</h2>
-        <p>vivotrademaster@gmail.com / vtm_on / דיסקורד.</p>
-        <p><a class="btn" href="mailto:your@email.com">שלחו לי מייל</a></p>
+        <p>אפשר ליצור קשר דרך אינסטגרם:</p>
+        <a class="btn" href="https://instagram.com/vtm_on" target="_blank" rel="noopener">פתח אינסטגרם</a>
       </div>
     </div>
 
-    <footer>נבנה עם GitHub Pages • © <span id="y"></span></footer>
+    <footer>© <span id="y"></span> vtm98 • GitHub Pages</footer>
   </div>
 
   <script>
