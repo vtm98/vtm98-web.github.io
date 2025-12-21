@@ -22,7 +22,7 @@
 <body>
   <div class="wrap">
     <div class="hero">
-      <span class="tag">👋 שלום חברים!</span>
+      <span class="tag">משקיעים יקרים</span>
       <h1>VTM</h1>
       <p>האתר שלי כרגע בשיפוצים — אבל הוא כבר באוויר. כאן יופיעו פרויקטים, קישורים ועדכונים.</p>
 
@@ -47,7 +47,7 @@
 
       <div class="card" id="contact">
         <h2>✉️ יצירת קשר</h2>
-        <p>אפשר לשים כאן מייל / אינסטגרם / דיסקורד.</p>
+        <p>אפשר לשים כאן מייל / אינסטגראם / דיסקורד.</p>
         <p><a class="btn" href="mailto:your@email.com">שלחו לי מייל</a></p>
       </div>
     </div>
