@@ -3,95 +3,161 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VTM</title>
+  <title>VTM — the home of investors</title>
 
   <style>
-body{
-  margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  color:#111;
+    :root{
+      --card-bg: rgba(255,255,255,0.82);
+      --border: #e9e9ee;
+      --text: #111;
+      --muted: #333;
+    }
 
-  background-image: url("vtmlogo.jpeg
-    ");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
 
-    .wrap{max-width:900px;margin:0 auto;padding:28px 16px}
-    .hero{ background: rgba(255,255,255,0.78);border:1px solid #eee;border-radius:18px;padding:22px}
-    .tag{display:inline-block;background:#eef2ff;border:18px solid #e3e8ff;padding:6px 10px;border-radius:999px;font-size:14px}
-    h1{margin:12px 0 6px}
-    p{margin:8px 0;line-height:1.8;color:#333}
+      /* ✅ רקע: כרגע צבע. כשתבחר תמונה, תשנה ל: background-image: url("bg.jpg"); */
+      background: #f6f7fb;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
 
-    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}
+    /* שכבת כהות עדינה כדי שהטקסט יהיה קריא כשיש תמונה */
+    .overlay{
+      min-height: 100vh;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.05));
+      padding: 26px 16px;
+      box-sizing: border-box;
+    }
+
+    .wrap{
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom: 16px;
+    }
+
+    .brand{
+      font-weight: 800;
+      letter-spacing: .5px;
+      font-size: 22px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 14px;
+    }
+
+    .top-title{
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    h1{
+      margin: 0 0 10px 0;
+      font-size: 40px;
+      line-height: 1.1;
+    }
+
+    .subtitle{
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .section{
+      margin-top: 14px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .section h2{
+      margin: 0 0 10px 0;
+      font-size: 20px;
+    }
+
+    .btns{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top: 12px;
+    }
+
     .btn{
       display:inline-block;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid #d7d7df;
+      background: #fff;
       text-decoration:none;
-      border-radius:12px;
-      padding:10px 14px;
-      border:1px solid #ddd;
-      background:#fff;
       color:#111;
+      font-weight: 700;
     }
-    .btn.primary{border-color:#111;background:#111;color:#fff}
 
-    /* אופציונלי: כפתור אייקון */
-    .icon-btn{
-      width:44px;height:44px;
-      display:inline-flex;align-items:center;justify-content:center;
-      border:1px solid #ddd;border-radius:12px;background:#fff;
-      text-decoration:none;
+    .btn.primary{
+      background:#111;
+      color:#fff;
+      border-color:#111;
     }
-    .icon-btn img{width:22px;height:22px;display:block}
 
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:14px}
-    .card{background:#fff;border:1px solid #eee;border-radius:16px;padding:16px}
-    footer{opacity:.7;margin-top:18px;font-size:13px}
+    footer{
+      opacity:.75;
+      text-align:center;
+      margin-top: 14px;
+      font-size: 13px;
+    }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="hero">
-      <span class="tag">👋 שלום!</span>
-      <h1>VTM</h1>
-      <p>ברוכים הבאים לאתר שלי. כאן יהיו פרויקטים, קישורים ועדכונים.</p>
+  <div class="overlay">
+    <div class="wrap">
 
-      <div class="btns">
-        <a class="btn primary" href="#projects">לפרויקטים</a>
-        <a class="btn" href="#contact">צור קשר</a>
+      <header>
+        <div class="brand">VTM</div>
+      </header>
 
-        <!-- אינסטגרם (לא רואים URL, רק טקסט) -->
-        <a class="btn" href="https://instagram.com/vtm_on" target="_blank" rel="noopener">אינסטגרם</a>
-
-        <!-- אם העלית קובץ בשם instagram.png ורוצה אייקון, בטל הערה בשורה הבאה -->
-        <!-- <a class="icon-btn" href="https://instagram.com/vtm_on" target="_blank" rel="noopener" aria-label="Instagram"><img src="instagram.png" alt=""></a> -->
+      <div class="top-title">
+        <h1>VTM the home of investors</h1>
+        <p class="subtitle">
+          VTM זו אקדמיית מסחר והשקעות במוצרים פיננסים, איתנו אתם תגיעו רחוק.
+        </p>
       </div>
+
+      <div class="section" id="contact">
+        <h2>יצירת קשר</h2>
+        <div class="btns">
+          <a class="btn primary"
+             href="https://wa.me/WHATSAPP_NUMBER?text=%D7%94%D7%99%D7%99%20VTM%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%94%D7%90%D7%A7%D7%93%D7%9E%D7%99%D7%94"
+             target="_blank" rel="noopener">
+            וואטסאפ
+          </a>
+
+          <a class="btn"
+             href="https://instagram.com/INSTAGRAM_USERNAME"
+             target="_blank" rel="noopener">
+            אינסטגרם
+          </a>
+        </div>
+      </div>
+
+      <footer>© <span id="y"></span> VTM</footer>
     </div>
-
-    <div class="grid" id="projects">
-      <div class="card">
-        <h2>📌 פרויקט 1</h2>
-        <p>תיאור קצר…</p>
-        <a class="btn" href="#" onclick="return false;">קישור (בקרוב)</a>
-      </div>
-
-      <div class="card">
-        <h2>📌 פרויקט 2</h2>
-        <p>תיאור קצר…</p>
-        <a class="btn" href="#" onclick="return false;">קישור (בקרוב)</a>
-      </div>
-
-      <div class="card" id="contact">
-        <h2>✉️ יצירת קשר</h2>
-        <p>אפשר ליצור קשר דרך אינסטגרם:</p>
-        <a class="btn" href="https://instagram.com/vtm_on" target="_blank" rel="noopener">פתח אינסטגרם</a>
-      </div>
-    </div>
-
-    <footer>© <span id="y"></span> vtm98 • GitHub Pages</footer>
   </div>
 
   <script>
