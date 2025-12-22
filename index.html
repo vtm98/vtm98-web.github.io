@@ -18,6 +18,44 @@
   line-height: 1.9;
   color:#222;
 }
+/* צבעים לכפתורי קשר */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 14px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,0.15);
+  background: rgba(255,255,255,0.9);
+  color:#111;
+  font-weight:700;
+  text-decoration:none;
+  transition: transform .15s ease, filter .15s ease;
+}
+
+.btn:hover{ transform: translateY(-1px); filter: brightness(0.98); }
+
+/* WhatsApp - ירוק */
+.btn-wa{
+  background:#25D366;
+  border-color:#1db954;
+  color:#0b1a10;
+}
+
+/* Instagram - סגול */
+.btn-ig{
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  border-color: rgba(255,255,255,0.25);
+  color:#fff;
+}
+
+/* TikTok - כהה נקי */
+.btn-tt{
+  background:#111;
+  border-color:#222;
+  color:#fff;
+}
 
 body{
   margin:0;
