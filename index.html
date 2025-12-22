@@ -18,6 +18,24 @@
   line-height: 1.9;
   color:#222;
 }
+    /* TradingView גובה "מרובע" */
+.tv-wrap{
+  max-width: 900px;      /* שיישב כמו שאר התוכן */
+  margin: 16px auto 0;
+}
+
+.tradingview-widget-container{
+  height: 520px;         /* תעלה ל-600 אם בא לך יותר מרובע */
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+#tradingview_chart{
+  height: 100%;
+}
+
 /* צבעים לכפתורי קשר */
 .btn{
   display:inline-flex;
