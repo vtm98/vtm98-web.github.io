@@ -470,16 +470,15 @@
       .cta-top{ display:none; } /* משאיר מקום */
       .btn{ width: 100%; }
     }
-    .logo{
+.logo{
   width: 44px;
   height: 44px;
   border-radius: 16px;
   overflow: hidden;
-  padding: 6px;
 
+  padding: 0;                /* חשוב */
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.14);
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
 
   display:flex;
   align-items:center;
@@ -489,9 +488,10 @@
 .logo img{
   width: 100%;
   height: 100%;
-  object-fit: contain; /* שלא ייחתך */
+  object-fit: cover;         /* ממלא את כל הריבוע */
   display:block;
 }
+
 
   </style>
 </head>
