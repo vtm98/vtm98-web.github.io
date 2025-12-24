@@ -3,102 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VTM הבית של המשקעים בישראל </title>
+  <title>VTM הבית של המשקיעים בישראל</title>
 
   <style>
     :root{
-      --card-bg: rgba(255,255,255,0.82);
-      --border: #e9e9ee;
+      --card-bg: rgba(255,255,255,0.92);
+      --border: rgba(0,0,0,0.08);
       --text: #111;
       --muted: #333;
     }
-.steps{
-  margin: 0;
-  padding-right: 18px;
-  line-height: 1.9;
-  color:#222;
-}
-    /* TradingView גובה "מרובע" */
-.tv-wrap{
-  max-width: 900px;      /* שיישב כמו שאר התוכן */
-  margin: 16px auto 0;
-}
 
-.tradingview-widget-container{
-  height: 520px;         /* תעלה ל-600 אם בא לך יותר מרובע */
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.18);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background-image:
+        linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.25)),
+        url("123.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
 
-#tradingview_chart{
-  height: 100%;
-}
-
-/* צבעים לכפתורי קשר */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding:10px 14px;
-  border-radius:12px;
-  border:1px solid rgba(0,0,0,0.15);
-  background: rgba(255,255,255,0.9);
-  color:#111;
-  font-weight:700;
-  text-decoration:none;
-  transition: transform .15s ease, filter .15s ease;
-}
-
-.btn:hover{ transform: translateY(-1px); filter: brightness(0.98); }
-
-/* WhatsApp - ירוק */
-.btn-wa{
-  background:#25D366;
-  border-color:#1db954;
-  color:#0b1a10;
-}
-
-/* Instagram - סגול */
-.btn-ig{
-  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-  border-color: rgba(255,255,255,0.25);
-  color:#fff;
-}
-
-/* TikTok - כהה נקי */
-.btn-tt{
-  background:#111;
-  border-color:#222;
-  color:#fff;
-}
-
-body{
-  margin:0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--text);
-
-  background-image:
-    linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.25)),
-    url("123.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
-}
-
-    /* שכבת כהות עדינה כדי שהטקסט יהיה קריא כשיש תמונה */
+    /* שכבת תוכן */
     .overlay{
       min-height: 100vh;
-     .overlay{
-  min-height: 100vh;
-  padding: 26px 16px;
-  box-sizing: border-box;
-}
-
       padding: 26px 16px;
       box-sizing: border-box;
     }
@@ -108,57 +39,81 @@ body{
       margin: 0 auto;
     }
 
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom: 16px;
-    }
-
-    .brand{
-      font-weight: 800;
-      letter-spacing: .5px;
-      font-size: 22px;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      padding: 10px 14px;
-      border-radius: 14px;
-    }
-
+    /* כותרת עליונה */
     .top-title{
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 22px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.18);
+      backdrop-filter: blur(10px);
     }
 
     h1{
       margin: 0 0 10px 0;
-      font-size: 40px;
+      font-size: clamp(30px, 6vw, 44px);
       line-height: 1.1;
     }
 
     .subtitle{
       margin: 0;
       color: var(--muted);
-      line-height: 1.8;
-      font-size: 16px;
+      line-height: 1.9;
+      font-size: clamp(15px, 3.8vw, 17px);
+      text-align: right;
     }
 
+    /* סעיפים */
     .section{
       margin-top: 14px;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 18px;
+      box-shadow: 0 14px 40px rgba(0,0,0,.14);
+      backdrop-filter: blur(10px);
     }
 
     .section h2{
-      margin: 0 0 10px 0;
+      margin: 0 0 12px 0;
       font-size: 20px;
     }
 
+    /* כרטיסים */
+    .cards{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card{
+      background: rgba(255,255,255,0.95);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .card h3{
+      margin: 0 0 6px 0;
+      font-size: 17px;
+    }
+
+    .card p{
+      margin: 0;
+      color: #222;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* רשימה */
+    .steps{
+      margin: 0;
+      padding-right: 18px;
+      line-height: 1.9;
+      color:#222;
+    }
+
+    /* כפתורי קשר */
     .btns{
       display:flex;
       gap:10px;
@@ -167,27 +122,54 @@ body{
     }
 
     .btn{
-      display:inline-block;
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid #d7d7df;
-      background: #fff;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(0,0,0,0.15);
       text-decoration:none;
-      color:#111;
-      font-weight: 700;
+      font-weight:700;
+      transition: transform .15s ease, filter .15s ease;
     }
+    .btn:hover{ transform: translateY(-1px); filter: brightness(0.98); }
 
-    .btn.primary{
-      background:#111;
-      color:#fff;
-      border-color:#111;
+    .btn-wa{ background:#25D366; border-color:#1db954; color:#0b1a10; }
+    .btn-ig{ background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); border-color: rgba(255,255,255,0.25); color:#fff; }
+    .btn-tt{ background:#111; border-color:#222; color:#fff; }
+
+    /* TradingView */
+    .tradingview-widget-container{
+      height: 520px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
     }
+    #tradingview_chart{ height: 100%; }
 
     footer{
       opacity:.75;
       text-align:center;
       margin-top: 14px;
       font-size: 13px;
+    }
+
+    /* מובייל */
+    @media (max-width: 600px){
+      body{ background-attachment: scroll; } /* יותר חלק במובייל */
+
+      .overlay{ padding: 16px 12px; }
+
+      .top-title{ padding: 16px; }
+      .section{ padding: 14px; }
+
+      .cards{ grid-template-columns: 1fr; } /* כרטיס אחד בשורה */
+
+      .btn{ width: 100%; } /* כפתורים לרוחב מלא */
+
+      .tradingview-widget-container{ height: 330px; } /* לא ענק */
     }
   </style>
 </head>
@@ -196,51 +178,54 @@ body{
   <div class="overlay">
     <div class="wrap">
 
- 
-
       <div class="top-title">
         <h1>VTM the home of investors</h1>
         <p class="subtitle">
-         VTM היא אקדמיית מסחר והשקעות שמיועדת לכל הרמות — מאנשים בלי ניסיון שרוצים להתחיל נכון, ועד סוחרים ומשקיעים מנוסים שרוצים להבין טוב יותר את השוק ולהיות עקביים ורווחיים יותר. אנחנו מלמדים מסחר והשקעות בקריפטו, מניות, מדדים וסחורות, עם דגש חזק על השוק האמריקאי.
-
-בתהליך הלמידה תקבל בסיס ברור ופשוט להבנה, לצד כלים פרקטיים ליישום: איך לקרוא את השוק, לבנות אסטרטגיה שמתאימה לך, לבחור עסקאות בצורה חכמה, ולנהל סיכונים בצורה מקצועית. המטרה שלנו היא שתעבוד בצורה מסודרת, תדע למה אתה נכנס לעסקה, ותבנה שיטה שתוכל להתמיד בה לאורך זמן.
+          VTM היא אקדמיית מסחר והשקעות שמיועדת לכל הרמות — מאנשים בלי ניסיון שרוצים להתחיל נכון,
+          ועד סוחרים ומשקיעים מנוסים שרוצים להבין טוב יותר את השוק ולהיות עקביים ורווחיים יותר.
+          אנחנו מלמדים מסחר והשקעות בקריפטו, מניות, מדדים וסחורות, עם דגש חזק על השוק האמריקאי.
+          <br><br>
+          בתהליך הלמידה תקבל בסיס ברור ופשוט להבנה, לצד כלים פרקטיים ליישום: איך לקרוא את השוק,
+          לבנות אסטרטגיה שמתאימה לך, לבחור עסקאות בצורה חכמה, ולנהל סיכונים בצורה מקצועית.
+          המטרה שלנו היא שתעבוד בצורה מסודרת, תדע למה אתה נכנס לעסקה, ותבנה שיטה שתוכל להתמיד בה לאורך זמן.
         </p>
       </div>
-<div class="section" id="why">
-  <h2>מה תקבלו ב־VTM</h2>
 
-  <div class="cards">
-    <div class="card">
-      <h3>מסלול למתחילים</h3>
-      <p>בסיס ברור: מושגים, פתיחת חשבון, הבנת שוק, וצעדים ראשונים בצורה מסודרת.</p>
-    </div>
+      <div class="section" id="why">
+        <h2>מה תקבלו ב־VTM</h2>
 
-    <div class="card">
-      <h3>מסלול למתקדמים</h3>
-      <p>שיפור ביצועים: דיוק כניסות/יציאות, אסטרטגיות, וניהול פוזיציה ברמה גבוהה יותר.</p>
-    </div>
+        <div class="cards">
+          <div class="card">
+            <h3>מסלול למתחילים</h3>
+            <p>בסיס ברור: מושגים, פתיחת חשבון, הבנת שוק, וצעדים ראשונים בצורה מסודרת.</p>
+          </div>
 
-    <div class="card">
-      <h3>ניהול סיכונים ומשמעת</h3>
-      <p>תכנון עסקה מראש, יחס סיכון/סיכוי, טעויות נפוצות, ומניעת החלטות מתוך רגש.</p>
-    </div>
+          <div class="card">
+            <h3>מסלול למתקדמים</h3>
+            <p>שיפור ביצועים: דיוק כניסות/יציאות, אסטרטגיות, וניהול פוזיציה ברמה גבוהה יותר.</p>
+          </div>
 
-    <div class="card">
-      <h3>שווקים ותכל'ס</h3>
-      <p>קריפטו, מניות, מדדים וסחורות — עם דגש על השוק האמריקאי ודוגמאות מהעולם האמיתי.</p>
-    </div>
-  </div>
-</div>
+          <div class="card">
+            <h3>ניהול סיכונים ומשמעת</h3>
+            <p>תכנון עסקה מראש, יחס סיכון/סיכוי, טעויות נפוצות, ומניעת החלטות מתוך רגש.</p>
+          </div>
 
-<div class="section" id="process">
-  <h2>איך זה עובד</h2>
-  <ol class="steps">
-    <li>שיחת היכרות קצרה להבין איפה אתה עומד ומה המטרה.</li>
-    <li>בניית מסלול מותאם (מתחיל/מתקדם).</li>
-    <li>יישום בפועל עם כללים ברורים וניהול סיכונים.</li>
-    <li>מעקב ושיפור עקביות לאורך זמן.</li>
-  </ol>
-</div>
+          <div class="card">
+            <h3>שווקים ותכל'ס</h3>
+            <p>קריפטו, מניות, מדדים וסחורות — עם דגש על השוק האמריקאי ודוגמאות מהעולם האמיתי.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="process">
+        <h2>איך זה עובד</h2>
+        <ol class="steps">
+          <li>שיחת היכרות קצרה להבין איפה אתה עומד ומה המטרה.</li>
+          <li>בניית מסלול מותאם (מתחיל/מתקדם).</li>
+          <li>יישום בפועל עם כללים ברורים וניהול סיכונים.</li>
+          <li>מעקב ושיפור עקביות לאורך זמן.</li>
+        </ol>
+      </div>
 
       <div class="section" id="contact">
         <h2>יצירת קשר</h2>
@@ -248,47 +233,43 @@ body{
           <a class="btn btn-wa"
              href="https://wa.me/972535758434?text=%D7%94%D7%99%D7%99%20VTM%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%94%D7%90%D7%A7%D7%93%D7%9E%D7%99%D7%94"
              target="_blank" rel="noopener">וואטסאפ</a>
-            
-          </a>
 
           <a class="btn btn-ig"
              href="https://instagram.com/vtm_on"
              target="_blank" rel="noopener">אינסטגרם</a>
-          
-          <a class="btn btn-tt"
-   href="https://www.tiktok.com/@vtm_on"
-   target="_blank" rel="noopener">טיקטוק</a>
 
+          <a class="btn btn-tt"
+             href="https://www.tiktok.com/@vtm_on"
+             target="_blank" rel="noopener">טיקטוק</a>
         </div>
       </div>
-<div class="section" id="charts">
-  <h2></h2>
 
-  <!-- TradingView Widget BEGIN -->
-  <div class="tv-widget">
-    <div class="tradingview-widget-container">
-      <div id="tradingview_chart"></div>
-      <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-      <script type="text/javascript">
-        new TradingView.widget({
-          "autosize": true,
-          "symbol": "NASDAQ:QQQ",
-          "interval": "60",
-          "timezone": "Asia/Jerusalem",
-          "theme": "dark",
-          "style": "1",
-          "locale": "en",
-          "allow_symbol_change": true,
-          "container_id": "tradingview_chart"
-        });
-      </script>
-    </div>
-  </div>
-  <!-- TradingView Widget END -->
-</div>
+      <div class="section" id="charts">
+        <h2>גרף חי</h2>
+
+        <div class="tradingview-widget-container">
+          <div id="tradingview_chart"></div>
+          <script src="https://s3.tradingview.com/tv.js"></script>
+          <script>
+            new TradingView.widget({
+              autosize: true,
+              symbol: "NASDAQ:QQQ",
+              interval: "60",
+              timezone: "Asia/Jerusalem",
+              theme: "dark",
+              style: "1",
+              locale: "en",
+              allow_symbol_change: true,
+              container_id: "tradingview_chart"
+            });
+          </script>
+        </div>
+      </div>
 
       <footer>© <span id="y"></span> VTM</footer>
+      <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+
     </div>
   </div>
-
-
+</body>
+</html>
