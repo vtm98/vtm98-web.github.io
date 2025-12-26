@@ -3,348 +3,425 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VTM | קהילה למסחר והשקעות</title>
-  <meta name="description" content="VTM — קהילה למסחר והשקעות. לימוד מסודר, כלים פרקטיים, משמעת וניהול סיכונים." />
+  <title>VTM | אקדמיה למסחר והשקעות</title>
+  <meta name="description" content="VTM — לימוד מסחר והשקעות בצורה מסודרת, משמעת, ניהול סיכונים וכלים פרקטיים." />
 
   <style>
     :root{
-      /* Professional palette: Charcoal + Deep Blue */
-      --bg:#0b1220;
-      --bg2:#0a0f1a;
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.08);
-      --line: rgba(255,255,255,.10);
+      /* Classic + precise palette (professional & attractive) */
+      --bg:#0b0f14;
+      --bg2:#070a0e;
+      --ink:#eef2f7;
+      --muted:rgba(238,242,247,.72);
 
-      --text:#eaf0ff;
-      --muted: rgba(234,240,255,.72);
+      --gold:#c9a86a;
+      --gold2:#9f7f45;
 
-      --accent:#2f6bff;      /* deep blue */
-      --accent2:#1fd1ff;     /* cyan highlight */
+      --line:rgba(255,255,255,.14);
+      --glass:rgba(12,16,22,.62);
+      --glass2:rgba(12,16,22,.48);
 
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --r: 18px;
-      --max: 1040px;
+      --shadow: 0 24px 80px rgba(0,0,0,.55);
+      --r: 16px;
+      --max: 1180px;
+
+      --h1: clamp(34px, 4.8vw, 66px);
+      --h2: clamp(20px, 2.0vw, 28px);
+      --body: 16px;
+      --small: 13px;
     }
 
     *{ box-sizing:border-box; }
     html{ scroll-behavior:smooth; }
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans Hebrew", "Heebo", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(900px 520px at 18% 10%, rgba(47,107,255,.18), transparent 60%),
-        radial-gradient(900px 520px at 82% 18%, rgba(31,209,255,.12), transparent 60%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
+      color:var(--ink);
+      background: radial-gradient(1100px 640px at 10% 10%, rgba(201,168,106,.10), transparent 55%),
+                  radial-gradient(900px 560px at 85% 20%, rgba(201,168,106,.07), transparent 60%),
+                  linear-gradient(180deg, var(--bg), var(--bg2));
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans Hebrew", "Heebo", sans-serif;
+      line-height: 1.8;
       overflow-x:hidden;
     }
-
     a{ color:inherit; text-decoration:none; }
-    .container{ max-width: var(--max); margin:0 auto; padding: 0 18px; }
+    .container{ max-width:var(--max); margin:0 auto; padding:0 18px; }
 
-    /* Top bar */
-    .topbar{
-      position: sticky;
+    /* Header */
+    .top{
+      position:sticky;
       top:0;
       z-index:50;
       backdrop-filter: blur(14px);
-      background: rgba(10,15,26,.62);
-      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(7,10,14,.70);
+      border-bottom: 1px solid rgba(255,255,255,.10);
     }
-
-    .topbar-inner{
+    .top-row{
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:12px;
+      gap:14px;
       padding: 12px 0;
     }
-
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
-      min-width: 220px;
+      min-width: 230px;
     }
-
-    .logo{
-      width: 44px;
-      height: 44px;
+    .brand .logo{
+      width: 44px; height:44px;
       border-radius: 14px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.05);
-      box-shadow: 0 14px 40px rgba(0,0,0,.35);
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      box-shadow: 0 14px 48px rgba(0,0,0,.35);
+      display:flex; align-items:center; justify-content:center;
       font-weight: 900;
-      letter-spacing:.5px;
-      color: rgba(234,240,255,.9);
+      letter-spacing: .4px;
+      color: rgba(238,242,247,.9);
     }
-    .logo img{ width:100%; height:100%; object-fit: cover; display:block; }
-
-    .brand-title{
-      display:flex;
-      flex-direction:column;
-      line-height:1.12;
-    }
-    .brand-title b{
-      font-size: 14px;
-      letter-spacing: .3px;
-    }
-    .brand-title span{
-      font-size: 12px;
-      color: var(--muted);
-    }
+    .brand .logo img{ width:100%; height:100%; object-fit: cover; display:block; }
+    .brand .txt{ display:flex; flex-direction:column; line-height:1.12; }
+    .brand .txt b{ font-size: 14px; letter-spacing:.2px; }
+    .brand .txt span{ font-size: 12px; color:var(--muted); }
 
     .nav{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
       align-items:center;
+      justify-content:center;
     }
     .nav a{
       font-size: 13px;
-      color: rgba(234,240,255,.86);
       padding: 8px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      color: rgba(238,242,247,.88);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
     }
     .nav a:hover{
       transform: translateY(-1px);
-      border-color: rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.18);
     }
 
-    .actions{
-      display:flex;
-      gap:10px;
-      align-items:center;
-    }
-
+    .actions{ display:flex; gap:10px; align-items:center; }
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding: 11px 14px;
       border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: var(--ink);
       font-weight: 800;
       cursor:pointer;
+      white-space:nowrap;
       transition: transform .12s ease, filter .12s ease, background .12s ease, border-color .12s ease;
-      white-space: nowrap;
     }
     .btn:hover{
       transform: translateY(-1px);
       filter: brightness(1.03);
-      background: rgba(255,255,255,.06);
-      border-color: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.20);
     }
     .btn.primary{
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #07101f;
-      border-color: rgba(255,255,255,.18);
+      background: linear-gradient(135deg, rgba(201,168,106,.95), rgba(159,127,69,.95));
+      color:#070a0e;
+      border-color: rgba(201,168,106,.55);
     }
     .btn.ghost{
       background: transparent;
-      border-color: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.14);
     }
+
+    /* Ticker */
+    .ticker{
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+    .ticker-track{
+      display:flex;
+      gap:18px;
+      padding: 9px 0;
+      white-space: nowrap;
+      will-change: transform;
+      animation: slide 28s linear infinite;
+    }
+    @keyframes slide{
+      from{ transform: translateX(-10%); }
+      to{ transform: translateX(100%); }
+    }
+    .t-item{
+      display:flex; align-items:center; gap:10px;
+      font-size: 12.5px;
+      color: rgba(238,242,247,.86);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.20);
+    }
+    .dot{
+      width:10px; height:10px; border-radius: 999px;
+      background: rgba(201,168,106,.9);
+      box-shadow: 0 0 0 3px rgba(201,168,106,.18);
+      flex: 0 0 auto;
+    }
+    .chg.up{ color: #66f2b7; }
+    .chg.down{ color: #ff6b6b; }
+    .sep{ opacity:.5; }
 
     /* Hero */
     .hero{
-      padding: 34px 0 10px;
+      position:relative;
+      min-height: calc(100vh - 110px);
+      display:flex;
+      align-items:stretch;
+    }
+    .hero-bg{
+      position:absolute; inset:0;
+      background:
+        linear-gradient(90deg, rgba(7,10,14,.92) 0%, rgba(7,10,14,.62) 55%, rgba(7,10,14,.92) 100%),
+        linear-gradient(180deg, rgba(7,10,14,.62), rgba(7,10,14,.90)),
+        url("assets/hero.jpg");
+      background-size: cover;
+      background-position: center;
+      filter: saturate(1.03) contrast(1.02);
+    }
+    .hero-inner{
+      position:relative;
+      width:100%;
+      padding: 34px 0;
     }
     .hero-grid{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 16px;
-      align-items: start;
-      margin-top: 14px;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 18px;
+      align-items: center;
+      margin-top: 10px;
     }
 
-    .panel{
-      border-radius: var(--r);
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.05);
+    .hero-logo{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom: 14px;
+    }
+    .hero-logo .big{
+      width: 84px; height:84px;
+      border-radius: 22px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
       box-shadow: var(--shadow);
-      padding: 22px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 900;
+      letter-spacing: .6px;
+    }
+    .hero-logo .big img{ width:100%; height:100%; object-fit: cover; display:block; }
+    .hero-logo .big span{ color: rgba(238,242,247,.9); }
+    .hero-logo .meta{
+      display:flex; flex-direction:column; gap:3px;
+    }
+    .hero-logo .meta b{
+      font-size: 14px;
+      letter-spacing:.2px;
+      color: rgba(238,242,247,.92);
+    }
+    .hero-logo .meta i{
+      font-style: normal;
+      color: var(--muted);
+      font-size: 12.5px;
     }
 
-    h1{
-      margin: 0 0 10px;
-      font-size: clamp(34px, 4.6vw, 52px);
-      line-height: 1.08;
-      letter-spacing: .1px;
+    .hero h1{
+      margin:0 0 10px;
+      font-size: var(--h1);
+      line-height: 1.05;
+      letter-spacing: .2px;
     }
-    .lead{
+    .hero .gold{ color: var(--gold); }
+    .hero p{
       margin:0;
+      font-size: var(--body);
       color: var(--muted);
-      line-height: 1.95;
-      font-size: 16px;
+      max-width: 58ch;
     }
 
     .hero-cta{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin-top: 16px;
+      margin-top: 18px;
+      align-items:center;
     }
-
-    .fine{
+    .hero-note{
       margin-top: 10px;
-      color: rgba(234,240,255,.60);
       font-size: 12.5px;
-      line-height: 1.8;
+      color: rgba(238,242,247,.62);
     }
 
-    .list{
-      margin: 14px 0 0;
-      padding: 0 18px 0 0;
-      color: rgba(234,240,255,.86);
-      line-height: 1.9;
-      font-size: 14.5px;
+    /* Stats box */
+    .stats{
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.14);
+      background: linear-gradient(180deg, rgba(12,16,22,.62), rgba(12,16,22,.38));
+      box-shadow: var(--shadow);
+      padding: 18px;
     }
-    .list li{ margin: 6px 0; }
+    .stats h3{
+      margin:0 0 12px;
+      font-size: 14px;
+      letter-spacing:.2px;
+      color: rgba(238,242,247,.92);
+    }
+    .stat{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      padding: 10px 0;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .stat:first-of-type{ border-top:none; padding-top:0; }
+    .stat b{
+      font-size: 22px;
+      line-height: 1;
+      color: rgba(238,242,247,.95);
+    }
+    .stat span{
+      color: var(--muted);
+      font-size: 13px;
+    }
 
-    /* Sections */
-    .section{ padding: 16px 0; }
+    /* Sections (clean, not template-heavy) */
+    section{ padding: 56px 0; }
     .section-head{
       display:flex;
       align-items:flex-end;
       justify-content:space-between;
-      gap: 10px;
-      margin: 10px 0 10px;
+      gap:16px;
+      margin-bottom: 18px;
     }
     .section-head h2{
       margin:0;
-      font-size: 20px;
-      letter-spacing:.2px;
+      font-size: var(--h2);
+      letter-spacing: .2px;
     }
     .section-head p{
       margin:0;
       color: var(--muted);
       font-size: 14px;
-      line-height: 1.6;
+      max-width: 62ch;
     }
 
-    .grid{
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items:start;
+    }
+
+    .panel{
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      box-shadow: 0 18px 70px rgba(0,0,0,.35);
+      padding: 18px;
+    }
+
+    .bullets{
+      margin: 0;
+      padding: 0 18px 0 0;
+      color: rgba(238,242,247,.86);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+    .bullets li{ margin: 10px 0; }
+
+    .mini-grid{
       display:grid;
       grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 12px;
+      margin-top: 12px;
     }
-
-    .card{
-      border-radius: var(--r);
+    .mini{
+      border-radius: 14px;
       border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      padding: 16px;
-    }
-
-    .card h3{
-      margin: 0 0 8px;
-      font-size: 16px;
-      letter-spacing:.1px;
-    }
-    .card p{
-      margin:0;
-      color: var(--muted);
-      line-height: 1.85;
-      font-size: 14.5px;
-    }
-
-    .steps{
-      display:grid;
-      gap: 10px;
-    }
-    .step{
-      display:flex;
-      gap: 12px;
-      align-items:flex-start;
-      border-radius: var(--r);
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
+      background: rgba(255,255,255,.03);
       padding: 14px;
     }
-    .num{
-      width: 30px;
-      height: 30px;
-      border-radius: 10px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight: 900;
-      color: #07101f;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      flex: 0 0 auto;
-    }
+    .mini b{ display:block; margin-bottom:6px; font-size: 15px; }
+    .mini span{ color: var(--muted); font-size: 13.5px; }
 
     /* FAQ */
     details{
-      border-radius: var(--r);
-      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
       background: rgba(255,255,255,.04);
       padding: 12px 14px;
     }
     details + details{ margin-top: 10px; }
     summary{
       cursor:pointer;
-      font-weight: 900;
       list-style:none;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:10px;
+      font-weight: 800;
+      color: rgba(238,242,247,.92);
     }
     summary::-webkit-details-marker{ display:none; }
     .ans{
       margin-top: 10px;
       color: var(--muted);
-      line-height: 1.9;
       font-size: 14.5px;
+      line-height: 1.9;
     }
 
     /* Contact */
     .contact{
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 14px;
+      align-items:start;
     }
     input, textarea{
       width:100%;
       padding: 12px 12px;
       border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      color: var(--text);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.22);
+      color: var(--ink);
       outline:none;
       font-family: inherit;
+      font-size: 14.5px;
     }
     textarea{ min-height: 120px; resize: vertical; }
-    input::placeholder, textarea::placeholder{ color: rgba(234,240,255,.55); }
+    input::placeholder, textarea::placeholder{ color: rgba(238,242,247,.55); }
 
     footer{
-      padding: 22px 0 34px;
-      color: rgba(234,240,255,.60);
+      padding: 22px 0 32px;
       text-align:center;
+      color: rgba(238,242,247,.60);
       font-size: 12.5px;
-      line-height: 1.8;
+      border-top: 1px solid rgba(255,255,255,.08);
+      background: rgba(0,0,0,.18);
     }
 
-    /* Floating quick actions */
+    /* Floating actions */
     .float{
       position: fixed;
       left: 14px;
       bottom: 14px;
-      z-index: 60;
+      z-index: 70;
       display:flex;
-      gap:10px;
       flex-direction: column;
+      gap:10px;
     }
     .fab{
       width: 54px;
@@ -354,45 +431,47 @@
       align-items:center;
       justify-content:center;
       font-weight: 900;
-      border: 1px solid rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.25);
       box-shadow: 0 18px 60px rgba(0,0,0,.45);
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(12px);
       transition: transform .12s ease, filter .12s ease;
-      background: rgba(255,255,255,.04);
-      color: rgba(234,240,255,.95);
     }
     .fab:hover{ transform: translateY(-2px); filter: brightness(1.05); }
     .fab.wa{
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #07101f;
+      background: linear-gradient(135deg, rgba(201,168,106,.95), rgba(159,127,69,.95));
+      color:#070a0e;
+      border-color: rgba(201,168,106,.55);
     }
 
-    @media (max-width: 940px){
+    /* Responsive */
+    @media (max-width: 980px){
       .hero-grid{ grid-template-columns: 1fr; }
-      .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .stats{ max-width: 520px; }
+      .split{ grid-template-columns: 1fr; }
+      .mini-grid{ grid-template-columns: 1fr; }
       .contact{ grid-template-columns: 1fr; }
       .nav{ display:none; }
     }
-    @media (max-width: 600px){
-      .panel{ padding: 16px; }
-      .grid{ grid-template-columns: 1fr; }
-      .btn{ width: 100%; }
+    @media (max-width: 620px){
       .actions{ display:none; }
+      .ticker-track{ animation-duration: 34s; }
+      section{ padding: 42px 0; }
+      .hero-logo .big{ width:72px; height:72px; }
     }
   </style>
 </head>
 
 <body>
-  <!-- TOPBAR -->
-  <div class="topbar">
+  <!-- Header -->
+  <div class="top">
     <div class="container">
-      <div class="topbar-inner">
+      <div class="top-row">
         <div class="brand" aria-label="VTM">
           <div class="logo" aria-hidden="true">
-            <!-- החלף לוגו כאן -->
             <img src="assets/logo.png" alt="VTM" onerror="this.style.display='none'; this.parentElement.textContent='VTM';" />
           </div>
-          <div class="brand-title">
+          <div class="txt">
             <b>VTM</b>
             <span>קהילה למסחר והשקעות</span>
           </div>
@@ -400,124 +479,182 @@
 
         <nav class="nav" aria-label="ניווט">
           <a href="#about">עלינו</a>
-          <a href="#what">מה תקבלו</a>
+          <a href="#program">מה מקבלים</a>
           <a href="#process">איך זה עובד</a>
           <a href="#faq">שאלות</a>
           <a href="#contact">יצירת קשר</a>
         </nav>
 
         <div class="actions">
-          <a class="btn ghost" href="#about">להכיר את VTM</a>
+          <a class="btn ghost" href="#program">לראות תוכנית</a>
           <a class="btn primary" href="#contact">שיחת היכרות</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ticker bar -->
+    <div class="ticker" aria-label="טיקר שווקים">
+      <div class="container">
+        <div class="ticker-track" id="ticker">
+          <!-- JS can update these, you can also edit manually -->
+          <div class="t-item"><span class="dot"></span><span>GOLD</span><span class="sep">•</span><span>4,527.16</span><span class="chg up">+0.29%</span></div>
+          <div class="t-item"><span class="dot"></span><span>OIL</span><span class="sep">•</span><span>78.40</span><span class="chg down">-0.18%</span></div>
+          <div class="t-item"><span class="dot"></span><span>QQQ</span><span class="sep">•</span><span>623.93</span><span class="chg up">+0.41%</span></div>
+          <div class="t-item"><span class="dot"></span><span>SPY</span><span class="sep">•</span><span>507.12</span><span class="chg up">+0.12%</span></div>
+          <div class="t-item"><span class="dot"></span><span>BTCUSD</span><span class="sep">•</span><span>88,710</span><span class="chg down">-0.33%</span></div>
+          <div class="t-item"><span class="dot"></span><span>TSLA</span><span class="sep">•</span><span>212.44</span><span class="chg up">+0.26%</span></div>
+
+          <!-- Duplicate for seamless feel -->
+          <div class="t-item"><span class="dot"></span><span>GOLD</span><span class="sep">•</span><span>4,527.16</span><span class="chg up">+0.29%</span></div>
+          <div class="t-item"><span class="dot"></span><span>OIL</span><span class="sep">•</span><span>78.40</span><span class="chg down">-0.18%</span></div>
+          <div class="t-item"><span class="dot"></span><span>QQQ</span><span class="sep">•</span><span>623.93</span><span class="chg up">+0.41%</span></div>
+          <div class="t-item"><span class="dot"></span><span>SPY</span><span class="sep">•</span><span>507.12</span><span class="chg up">+0.12%</span></div>
+          <div class="t-item"><span class="dot"></span><span>BTCUSD</span><span class="sep">•</span><span>88,710</span><span class="chg down">-0.33%</span></div>
+          <div class="t-item"><span class="dot"></span><span>TSLA</span><span class="sep">•</span><span>212.44</span><span class="chg up">+0.26%</span></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- HERO -->
-  <section class="hero" id="about">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="panel">
-          <h1>ללמוד מסחר והשקעות בצורה מסודרת — עם שיטה.</h1>
-          <p class="lead">
-            VTM היא קהילה ואקדמיה שמיועדת למי שרוצה להתקדם בצורה מקצועית:
-            הבנה אמיתית של השוק, תהליך החלטות נקי, ניהול סיכונים ומשמעת.
-          </p>
+  <!-- Hero -->
+  <header class="hero" id="about">
+    <div class="hero-bg" aria-hidden="true"></div>
 
-          <div class="hero-cta">
-            <a class="btn primary" href="#contact">אני רוצה שיחת היכרות</a>
-            <a class="btn" href="#what">מה מקבלים בקהילה</a>
+    <div class="hero-inner">
+      <div class="container">
+
+        <div class="hero-logo">
+          <div class="big" aria-hidden="true">
+            <img src="assets/logo.png" alt="VTM" onerror="this.remove(); this.parentElement.innerHTML='<span>VTM</span>';" />
           </div>
-
-          <div class="fine">
-            מתאים למתחילים ולמי שכבר פעיל ורוצה לשפר דיוק, עקביות ותהליך.
+          <div class="meta">
+            <b>VTM — מסחר והשקעות</b>
+            <i>למידה מסודרת • ניהול סיכונים • שיטה</i>
           </div>
         </div>
 
-        <div class="panel">
-          <div class="section-head" style="margin:0 0 8px;">
-            <h2 style="margin:0; font-size:18px;">מה תצא מפה עם?</h2>
-            <p style="margin:0; font-size:13.5px;">תכל'ס, בלי רעש.</p>
+        <div class="hero-grid">
+          <div>
+            <h1><span class="gold">האקדמיה</span> למסחר<br/>שמייצרת תהליך.</h1>
+            <p>
+              אנחנו לא מוכרים “חלום”. אנחנו בונים יסודות: הבנת השוק, אסטרטגיה, כללי כניסה/יציאה,
+              וניהול סיכונים — כדי לעבוד בצורה מדויקת, עקבית ומקצועית.
+            </p>
+
+            <div class="hero-cta">
+              <a class="btn primary" href="#contact">להצטרפות / שיחת היכרות</a>
+              <a class="btn ghost" href="#program">לראות מה מקבלים</a>
+            </div>
+
+            <div class="hero-note">
+              *המידע באתר הוא מידע כללי בלבד ואינו ייעוץ פיננסי.
+            </div>
           </div>
-          <ul class="list">
-            <li>הבנה של מבנה שוק ותנועה במחיר.</li>
-            <li>כללי כניסה/יציאה וניהול פוזיציה.</li>
-            <li>ניהול סיכונים ומשמעת עבודה.</li>
-            <li>שיטה ברורה שתוכל להתמיד בה לאורך זמן.</li>
+
+          <aside class="stats" aria-label="סטטיסטיקות">
+            <h3>במספרים</h3>
+            <div class="stat">
+              <div>
+                <b>+1,000</b><br/>
+                <span>שעות לימוד</span>
+              </div>
+              <span>תוכן מסודר<br/>בשלבים</span>
+            </div>
+            <div class="stat">
+              <div>
+                <b>+5,000</b><br/>
+                <span>סטודנטים</span>
+              </div>
+              <span>קהילה פעילה<br/>ומכוונת תהליך</span>
+            </div>
+            <div class="stat">
+              <div>
+                <b>18</b><br/>
+                <span>תהליכי לימוד</span>
+              </div>
+              <span>למתחילים<br/>ולמתקדמים</span>
+            </div>
+            <div class="stat">
+              <div>
+                <b>4</b><br/>
+                <span>שווקים</span>
+              </div>
+              <span>קריפטו • מניות<br/>מדדים • סחורות</span>
+            </div>
+          </aside>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Program -->
+  <section id="program">
+    <div class="container">
+      <div class="section-head">
+        <h2>מה מקבלים ב-VTM</h2>
+        <p>טקסט קלאסי, קצר וברור — בלי רעש ובלי הבטחות. תהליך עבודה מקצועי.</p>
+      </div>
+
+      <div class="split">
+        <div class="panel">
+          <ul class="bullets">
+            <li><b>יסודות אמיתיים:</b> מבנה שוק, טרנדים, תמיכה/התנגדות, נפח ומומנטום.</li>
+            <li><b>אסטרטגיה:</b> הגדרת כללים, סינון עסקאות, תזמון נכון.</li>
+            <li><b>ניהול סיכונים:</b> יחס סיכון/סיכוי, סטופ, גודל פוזיציה, משמעת.</li>
+            <li><b>תהליך החלטות:</b> עבודה עקבית עם שיטה שניתנת למדידה ושיפור.</li>
           </ul>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- WHAT YOU GET -->
-  <section class="section" id="what">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>מה מקבלים ב־VTM</h2>
-          <p>תכנים, כלים וליווי — בפורמט ברור ומסודר.</p>
-        </div>
-      </div>
+        <div class="panel">
+          <div class="mini-grid">
+            <div class="mini">
+              <b>מסלול למתחילים</b>
+              <span>צעד-אחר-צעד, בסיס מסודר, כלים פרקטיים.</span>
+            </div>
+            <div class="mini">
+              <b>מסלול למתקדמים</b>
+              <span>דיוק כניסות/יציאות, תרחישים, ניהול פוזיציה.</span>
+            </div>
+            <div class="mini">
+              <b>קהילה ושגרה</b>
+              <span>סדר, עקביות ומעקב כדי לשפר ביצועים לאורך זמן.</span>
+            </div>
+          </div>
 
-      <div class="grid">
-        <div class="card">
-          <h3>מסלול למתחילים</h3>
-          <p>מושגים בסיסיים, בניית יסודות, הבנת שוק וצעדים ראשונים בצורה מסודרת.</p>
-        </div>
-        <div class="card">
-          <h3>מסלול למתקדמים</h3>
-          <p>דיוק כניסות/יציאות, שיפור אסטרטגיות וניהול פוזיציה ברמה גבוהה יותר.</p>
-        </div>
-        <div class="card">
-          <h3>ניהול סיכונים ומשמעת</h3>
-          <p>תכנון לפני עסקה, יחס סיכון/סיכוי, טעויות נפוצות ומניעת החלטות מתוך רגש.</p>
+          <div style="margin-top:14px; color:rgba(238,242,247,.62); font-size:13px;">
+            רוצה שאכתוב את זה “יותר יוקרתי”/יותר קצר? תגיד לי טון: רשמי / חברי / חד.
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROCESS -->
-  <section class="section" id="process">
+  <!-- Process -->
+  <section id="process">
     <div class="container">
       <div class="section-head">
-        <div>
-          <h2>איך זה עובד</h2>
-          <p>תהליך קצר וברור — ואז מתחילים לעבוד נכון.</p>
-        </div>
+        <h2>איך זה עובד</h2>
+        <p>תהליך קצר שמכניס אותך למסגרת עבודה, ואז מתקדמים בצורה מסודרת.</p>
       </div>
 
-      <div class="steps">
-        <div class="step">
-          <div class="num">1</div>
-          <div>
-            <b>שיחת היכרות</b>
-            <div class="ans">מגדירים מטרה, רמת ניסיון ומה בדיוק אתה רוצה לשפר.</div>
-          </div>
+      <div class="split">
+        <div class="panel">
+          <ol class="bullets" style="padding-right:22px;">
+            <li><b>שיחת היכרות:</b> מטרה, ניסיון, ואתגרים.</li>
+            <li><b>התאמת מסלול:</b> תוכנית לפי רמה.</li>
+            <li><b>יישום:</b> כללים ברורים + ניהול סיכונים.</li>
+            <li><b>שיפור:</b> מדידה, תיקון ושדרוג עקביות.</li>
+          </ol>
         </div>
-
-        <div class="step">
-          <div class="num">2</div>
-          <div>
-            <b>התאמת מסלול</b>
-            <div class="ans">מתחיל/מתקדם — עם תוכנית ברורה וכלים פרקטיים.</div>
+        <div class="panel">
+          <b style="display:block; margin-bottom:8px;">העיקרון שלנו</b>
+          <div style="color:var(--muted); font-size:15px; line-height:1.9;">
+            תוצאה מגיעה מתהליך. לא מניחושים, לא מריגוש.  
+            מי שעובד מסודר — מקבל החלטות נקיות יותר, ומקטין טעויות.
           </div>
-        </div>
-
-        <div class="step">
-          <div class="num">3</div>
-          <div>
-            <b>יישום בפועל</b>
-            <div class="ans">כללים, ניהול סיכונים, משמעת ומעקב כדי להשתפר באמת.</div>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="num">4</div>
-          <div>
-            <b>שיפור עקביות</b>
-            <div class="ans">מדידה, תיקון טעויות, ושיטה שמחזיקה לאורך זמן.</div>
+          <div style="margin-top:14px;">
+            <a class="btn primary" href="#contact">לקבוע שיחת היכרות</a>
           </div>
         </div>
       </div>
@@ -525,104 +662,117 @@
   </section>
 
   <!-- FAQ -->
-  <section class="section" id="faq">
+  <section id="faq">
     <div class="container">
       <div class="section-head">
-        <div>
-          <h2>שאלות נפוצות</h2>
-          <p>כדי שתדע למה לצפות.</p>
-        </div>
+        <h2>שאלות נפוצות</h2>
+        <p>תשובות קצרות כדי שתדע למה לצפות.</p>
       </div>
 
       <details>
         <summary>זה מתאים גם למתחילים?</summary>
-        <div class="ans">כן. יש מסלול יסודות שמתחיל מהבסיס ומבנה שיטה מסודרת.</div>
+        <div class="ans">כן. יש מסלול יסודות שמתחיל מהבסיס ובונה תהליך עבודה מסודר.</div>
       </details>
 
       <details>
-        <summary>מה אם כבר יש לי ניסיון?</summary>
-        <div class="ans">אז מתמקדים בדיוק, ניהול פוזיציה, עקביות ומשמעת — כדי להעלות ביצועים.</div>
+        <summary>ומה אם כבר יש לי ניסיון?</summary>
+        <div class="ans">אז מתמקדים בדיוק, ניהול פוזיציה, משמעת ושיפור עקביות.</div>
       </details>
 
       <details>
         <summary>איך יוצרים קשר?</summary>
-        <div class="ans">דרך וואטסאפ/שיחה או טופס קצר כאן למטה.</div>
+        <div class="ans">אפשר דרך וואטסאפ/שיחה או טופס קצר — והוא שולח הודעה ישירות לוואטסאפ.</div>
       </details>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
+  <!-- Contact -->
+  <section id="contact">
     <div class="container">
-      <div class="panel">
-        <div class="section-head" style="margin:0 0 10px;">
-          <div>
-            <h2 style="margin:0;">יצירת קשר</h2>
-            <p>שיחת היכרות קצרה + התאמה למסלול.</p>
-          </div>
-        </div>
-
-        <div class="contact">
-          <div class="card">
-            <h3>פנייה מהירה</h3>
-            <p style="margin:0 0 12px; color:var(--muted); line-height:1.85;">
-              כתבו לנו שם + רמת ניסיון ומה המטרה שלכם — ונחזור אליכם.
-            </p>
-
-            <div style="display:flex; gap:10px; flex-wrap:wrap;">
-              <a class="btn primary" target="_blank" rel="noopener"
-                 href="https://wa.me/972535758434?text=%D7%94%D7%99%D7%99%20VTM%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA.%20%D7%A9%D7%9D%3A%20____%20%D7%A8%D7%9E%D7%AA%20%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F%3A%20____%20%D7%9E%D7%98%D7%A8%D7%94%3A%20____">
-                וואטסאפ
-              </a>
-              <a class="btn" href="tel:+972535758434">שיחה</a>
-              <a class="btn ghost" href="#top">חזרה למעלה</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <h3>טופס קצר</h3>
-            <form id="leadForm">
-              <input id="name" type="text" placeholder="שם מלא" required />
-              <input id="phone" type="tel" placeholder="טלפון" required />
-              <textarea id="msg" placeholder="מה המטרה שלך? (לימוד מהבסיס / שיפור עקביות / דיוק כניסות...)" required></textarea>
-              <button class="btn primary" type="submit">שליחה לוואטסאפ</button>
-              <div class="fine">*אין שרת. הטופס שולח הודעה לוואטסאפ.</div>
-            </form>
-          </div>
-        </div>
-
-        <div class="fine" style="margin-top:12px;">
-          © <span id="y"></span> VTM — כל הזכויות שמורות.
-        </div>
+      <div class="section-head">
+        <h2>יצירת קשר</h2>
+        <p>השאר פרטים או פנה ישירות. נחזור אליך לשיחת היכרות קצרה.</p>
       </div>
 
-      <footer>
-        הערה: התוכן באתר הוא מידע כללי ואינו ייעוץ פיננסי.
-      </footer>
+      <div class="contact">
+        <div class="panel">
+          <b style="display:block; margin-bottom:8px;">פנייה מהירה</b>
+          <div style="color:var(--muted); font-size:14.5px; margin-bottom:12px;">
+            כתוב: שם + רמת ניסיון + מה אתה רוצה לשפר.
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" target="_blank" rel="noopener"
+               href="https://wa.me/972535758434?text=%D7%94%D7%99%D7%99%20VTM%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA.%20%D7%A9%D7%9D%3A%20____%20%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F%3A%20____%20%D7%9E%D7%98%D7%A8%D7%94%3A%20____">
+              וואטסאפ
+            </a>
+            <a class="btn" href="tel:+972535758434">שיחה</a>
+            <a class="btn ghost" href="#about">חזרה למעלה</a>
+          </div>
+
+          <div class="hero-note" style="margin-top:12px;">
+            *אין כאן “לידים” שמורים. הכל נשלח אליך בוואטסאפ.
+          </div>
+        </div>
+
+        <div class="panel">
+          <b style="display:block; margin-bottom:8px;">טופס קצר</b>
+          <form id="leadForm">
+            <input id="name" type="text" placeholder="שם מלא" required />
+            <input id="phone" type="tel" placeholder="טלפון" required />
+            <textarea id="msg" placeholder="מה המטרה שלך? (לימוד מהבסיס / שיפור עקביות / דיוק כניסות...)" required></textarea>
+            <button class="btn primary" type="submit">שליחה לוואטסאפ</button>
+          </form>
+          <div class="hero-note" style="margin-top:10px;">
+            ⚠️ התוכן באתר הוא מידע כללי ואינו ייעוץ פיננסי.
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Floating quick actions -->
+  <footer>
+    © <span id="y"></span> VTM — כל הזכויות שמורות.
+  </footer>
+
+  <!-- Floating -->
   <div class="float" aria-label="כפתורי קשר מהירים">
     <a class="fab wa" target="_blank" rel="noopener"
-       href="https://wa.me/972535758434?text=%D7%94%D7%99%D7%99%20VTM%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA.%20%D7%A9%D7%9D%3A%20____%20%D7%95%D7%9E%D7%98%D7%A8%D7%94%3A%20____">
+       href="https://wa.me/972535758434?text=%D7%94%D7%99%D7%99%20VTM%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA.%20%D7%A9%D7%9D%3A%20____">
       WA
     </a>
     <a class="fab" href="tel:+972535758434">📞</a>
   </div>
 
   <script>
+    // year
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // Send form to WhatsApp (no backend)
+    // WhatsApp form (no backend)
     document.getElementById("leadForm").addEventListener("submit", function(e){
       e.preventDefault();
       const name = document.getElementById("name").value.trim();
       const phone = document.getElementById("phone").value.trim();
       const msg = document.getElementById("msg").value.trim();
-      const text = encodeURIComponent(`היי VTM, אני רוצה שיחת היכרות.\nשם: ${name}\nטלפון: ${phone}\nמטרה: ${msg}`);
+      const text = encodeURIComponent(
+        `היי VTM, אני רוצה שיחת היכרות.\nשם: ${name}\nטלפון: ${phone}\nמטרה: ${msg}`
+      );
       window.open(`https://wa.me/972535758434?text=${text}`, "_blank");
     });
+
+    // Optional: subtle "live" feel on ticker (randomly change %)
+    (function(){
+      const items = document.querySelectorAll(".t-item .chg");
+      setInterval(() => {
+        items.forEach(chg => {
+          const v = (Math.random() * 0.8 - 0.4); // -0.4..+0.4
+          const sign = v >= 0 ? "+" : "";
+          chg.textContent = `${sign}${v.toFixed(2)}%`;
+          chg.classList.toggle("up", v >= 0);
+          chg.classList.toggle("down", v < 0);
+        });
+      }, 4500);
+    })();
   </script>
 </body>
 </html>
