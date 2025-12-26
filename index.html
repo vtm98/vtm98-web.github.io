@@ -3,225 +3,231 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="VTM – קהילה ואקדמיה למסחר והשקעות: אסטרטגיה, ניהול סיכונים, ליווי ותרגול. תוכן לימודי בלבד." />
-  <title>VTM | הבית של המשקיעים בישראל</title>
+  <title>VTM | קהילה למסחר והשקעות</title>
+  <meta name="description" content="VTM — קהילה למסחר והשקעות. לימוד מסודר, כלים פרקטיים, משמעת וניהול סיכונים." />
 
   <style>
     :root{
-      --bg1:#070b18;
-      --bg2:#0b1430;
-      --card: rgba(255,255,255,.08);
-      --card2: rgba(255,255,255,.12);
-      --border: rgba(255,255,255,.14);
-      --text:#f5f7ff;
-      --muted: rgba(245,247,255,.75);
-      --accent:#52c7ff;
-      --accent2:#7c5cff;
-      --good:#26d07c;
-      --warn:#ffcf5a;
+      /* Professional palette: Charcoal + Deep Blue */
+      --bg:#0b1220;
+      --bg2:#0a0f1a;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
+      --line: rgba(255,255,255,.10);
+
+      --text:#eaf0ff;
+      --muted: rgba(234,240,255,.72);
+
+      --accent:#2f6bff;      /* deep blue */
+      --accent2:#1fd1ff;     /* cyan highlight */
+
       --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --radius: 18px;
-      --max: 1100px;
+      --r: 18px;
+      --max: 1040px;
     }
 
-    *{ box-sizing: border-box; }
-    html{ scroll-behavior: smooth; }
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
     body{
       margin:0;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans Hebrew", "Heebo", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(1200px 700px at 15% 10%, rgba(82,199,255,.22), transparent 55%),
-        radial-gradient(900px 600px at 85% 20%, rgba(124,92,255,.18), transparent 55%),
-        linear-gradient(180deg, var(--bg1), var(--bg2));
-      min-height: 100vh;
+        radial-gradient(900px 520px at 18% 10%, rgba(47,107,255,.18), transparent 60%),
+        radial-gradient(900px 520px at 82% 18%, rgba(31,209,255,.12), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
       overflow-x:hidden;
     }
 
-    a{ color: inherit; }
-    .container{ max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+    a{ color:inherit; text-decoration:none; }
+    .container{ max-width: var(--max); margin:0 auto; padding: 0 18px; }
 
-    /* NAV */
-    .nav{
+    /* Top bar */
+    .topbar{
       position: sticky;
-      top: 0;
-      z-index: 50;
+      top:0;
+      z-index:50;
       backdrop-filter: blur(14px);
-      background: rgba(10,14,30,.55);
+      background: rgba(10,15,26,.62);
       border-bottom: 1px solid rgba(255,255,255,.08);
     }
-    .nav-inner{
+
+    .topbar-inner{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:12px;
       padding: 12px 0;
     }
+
     .brand{
       display:flex;
       align-items:center;
-      gap:10px;
-      font-weight:900;
-      letter-spacing:.4px;
+      gap:12px;
+      min-width: 220px;
     }
+
     .logo{
-      width: 40px; height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 10px 30px rgba(82,199,255,.18);
-      position: relative;
-      overflow:hidden;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      box-shadow: 0 14px 40px rgba(0,0,0,.35);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 900;
+      letter-spacing:.5px;
+      color: rgba(234,240,255,.9);
     }
-    .logo:after{
-      content:"";
-      position:absolute; inset:-40%;
-      background: radial-gradient(circle, rgba(255,255,255,.55), transparent 60%);
-      transform: rotate(25deg);
-      opacity:.4;
+    .logo img{ width:100%; height:100%; object-fit: cover; display:block; }
+
+    .brand-title{
+      display:flex;
+      flex-direction:column;
+      line-height:1.12;
     }
-    .brand span{ font-size: 16px; }
-    .nav-links{
-      display:flex; gap:10px; flex-wrap:wrap;
+    .brand-title b{
+      font-size: 14px;
+      letter-spacing: .3px;
     }
-    .chip{
-      text-decoration:none;
-      padding: 9px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.10);
-      color: rgba(245,247,255,.92);
-      font-weight: 700;
+    .brand-title span{
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .nav a{
       font-size: 13px;
-      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      color: rgba(234,240,255,.86);
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
     }
-    .chip:hover{ transform: translateY(-1px); background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.16); }
-
-    .cta-top{
-      display:flex; gap:10px; align-items:center;
+    .nav a:hover{
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
     }
 
-    /* Buttons */
+    .actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:10px;
-      padding: 12px 14px;
+      padding: 11px 14px;
       border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
       color: var(--text);
-      text-decoration:none;
-      font-weight: 900;
-      box-shadow: 0 10px 35px rgba(0,0,0,.22);
-      transition: transform .12s ease, filter .12s ease, background .12s ease, border-color .12s ease;
+      font-weight: 800;
       cursor:pointer;
-      user-select:none;
+      transition: transform .12s ease, filter .12s ease, background .12s ease, border-color .12s ease;
+      white-space: nowrap;
     }
-    .btn:hover{ transform: translateY(-1px); filter: brightness(1.03); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.20); }
+    .btn:hover{
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.18);
+    }
     .btn.primary{
       background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #07101f;
       border-color: rgba(255,255,255,.18);
     }
     .btn.ghost{
       background: transparent;
-      border-color: rgba(255,255,255,.16);
-      box-shadow: none;
+      border-color: rgba(255,255,255,.12);
     }
 
-    /* HERO */
+    /* Hero */
     .hero{
-      padding: 34px 0 8px;
-      position: relative;
+      padding: 34px 0 10px;
     }
     .hero-grid{
       display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 18px;
-      align-items: stretch;
-      margin-top: 16px;
-    }
-    .panel{
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 22px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
-    }
-    .hero h1{
-      margin: 0 0 12px;
-      font-size: clamp(32px, 5vw, 54px);
-      line-height: 1.05;
-      letter-spacing: -.2px;
-    }
-    .hero p{
-      margin: 0 0 14px;
-      color: var(--muted);
-      line-height: 1.95;
-      font-size: clamp(15px, 2.1vw, 17px);
-    }
-    .badges{
-      display:flex; gap:10px; flex-wrap:wrap;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      align-items: start;
       margin-top: 14px;
     }
-    .badge{
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.07);
-      font-weight: 800;
-      font-size: 12.5px;
-      color: rgba(245,247,255,.92);
+
+    .panel{
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      box-shadow: var(--shadow);
+      padding: 22px;
     }
 
-    .hero-actions{
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(34px, 4.6vw, 52px);
+      line-height: 1.08;
+      letter-spacing: .1px;
+    }
+    .lead{
+      margin:0;
+      color: var(--muted);
+      line-height: 1.95;
+      font-size: 16px;
+    }
+
+    .hero-cta{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
       margin-top: 16px;
     }
 
-    /* Stats */
-    .stats{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 10px;
-      margin-top: 14px;
-    }
-    .stat{
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 16px;
-      padding: 14px;
-    }
-    .stat .n{
-      font-size: 22px;
-      font-weight: 950;
-      letter-spacing: .2px;
-    }
-    .stat .t{
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
+    .fine{
+      margin-top: 10px;
+      color: rgba(234,240,255,.60);
+      font-size: 12.5px;
+      line-height: 1.8;
     }
 
-    /* Cards sections */
-    .section{
-      padding: 18px 0;
+    .list{
+      margin: 14px 0 0;
+      padding: 0 18px 0 0;
+      color: rgba(234,240,255,.86);
+      line-height: 1.9;
+      font-size: 14.5px;
     }
+    .list li{ margin: 6px 0; }
+
+    /* Sections */
+    .section{ padding: 16px 0; }
     .section-head{
-      display:flex; align-items:flex-end; justify-content:space-between; gap:10px;
-      margin: 6px 0 12px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap: 10px;
+      margin: 10px 0 10px;
     }
     .section-head h2{
-      margin: 0;
-      font-size: 22px;
-      letter-spacing: .1px;
+      margin:0;
+      font-size: 20px;
+      letter-spacing:.2px;
     }
     .section-head p{
-      margin: 0;
+      margin:0;
       color: var(--muted);
       font-size: 14px;
       line-height: 1.6;
@@ -232,135 +238,64 @@
       grid-template-columns: repeat(3, minmax(0,1fr));
       gap: 12px;
     }
+
     .card{
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 18px;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
       padding: 16px;
-      box-shadow: 0 14px 40px rgba(0,0,0,.22);
-      position: relative;
-      overflow:hidden;
     }
-    .card:before{
-      content:"";
-      position:absolute; inset:-40% -50%;
-      background: radial-gradient(circle, rgba(82,199,255,.18), transparent 55%);
-      transform: rotate(10deg);
-      opacity:.55;
-    }
-    .card > *{ position: relative; }
+
     .card h3{
       margin: 0 0 8px;
-      font-size: 16.5px;
+      font-size: 16px;
+      letter-spacing:.1px;
     }
     .card p{
-      margin: 0;
+      margin:0;
       color: var(--muted);
       line-height: 1.85;
       font-size: 14.5px;
     }
-    .pill{
-      display:inline-block;
-      margin-bottom: 10px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      font-weight: 900;
-      font-size: 12px;
-      color: rgba(245,247,255,.92);
-    }
 
-    /* Timeline */
-    .timeline{
+    .steps{
       display:grid;
-      grid-template-columns: 1fr;
       gap: 10px;
     }
     .step{
       display:flex;
       gap: 12px;
       align-items:flex-start;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 18px;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
       padding: 14px;
     }
-    .dot{
-      width: 30px; height: 30px;
-      border-radius: 12px;
+    .num{
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight: 900;
+      color: #07101f;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       flex: 0 0 auto;
-      display:flex; align-items:center; justify-content:center;
-      font-weight: 950;
-      box-shadow: 0 12px 26px rgba(124,92,255,.20);
-    }
-    .step h4{ margin: 0 0 4px; }
-    .step p{ margin: 0; color: var(--muted); line-height: 1.8; font-size: 14.5px; }
-
-    /* Testimonials */
-    .quote{
-      font-size: 14.5px;
-      line-height: 1.85;
-      color: rgba(245,247,255,.90);
-    }
-    .who{
-      margin-top: 10px;
-      color: var(--muted);
-      font-weight: 800;
-      font-size: 13px;
     }
 
-    /* Pricing */
-    .pricing{
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 12px;
-    }
-    .price{
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 18px;
-      padding: 16px;
-      box-shadow: 0 18px 60px rgba(0,0,0,.28);
-      position: relative;
-      overflow:hidden;
-    }
-    .price.featured{
-      border-color: rgba(82,199,255,.35);
-      background: rgba(82,199,255,.08);
-    }
-    .price h3{ margin: 0 0 8px; }
-    .price .tag{
-      display:inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      font-weight: 900;
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
-    .list{
-      margin: 10px 0 0;
-      padding: 0 18px 0 0;
-      color: var(--muted);
-      line-height: 1.9;
-      font-size: 14.5px;
-    }
-
-    /* FAQ accordion */
+    /* FAQ */
     details{
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 18px;
+      border-radius: var(--r);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
       padding: 12px 14px;
     }
     details + details{ margin-top: 10px; }
     summary{
       cursor:pointer;
       font-weight: 900;
-      list-style: none;
+      list-style:none;
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -373,50 +308,35 @@
       line-height: 1.9;
       font-size: 14.5px;
     }
-    .chev{
-      width: 34px; height: 34px;
+
+    /* Contact */
+    .contact{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    input, textarea{
+      width:100%;
+      padding: 12px 12px;
       border-radius: 14px;
-      display:flex; align-items:center; justify-content:center;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      transition: transform .15s ease;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      outline:none;
+      font-family: inherit;
     }
-    details[open] .chev{ transform: rotate(180deg); }
+    textarea{ min-height: 120px; resize: vertical; }
+    input::placeholder, textarea::placeholder{ color: rgba(234,240,255,.55); }
 
-    /* TradingView */
-    .tv{
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.12);
-      border-radius: 18px;
-      padding: 14px;
-      overflow:hidden;
-    }
-    .tradingview-widget-container{
-      height: 520px;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.18);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-      background: rgba(0,0,0,.25);
-    }
-    #tradingview_chart{ height: 100%; }
-
-    /* Bottom CTA */
-    .final-cta{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 14px;
-      flex-wrap:wrap;
-    }
-    .final-cta .text{
-      color: var(--muted);
-      line-height: 1.9;
-      max-width: 620px;
-      font-size: 14.5px;
+    footer{
+      padding: 22px 0 34px;
+      color: rgba(234,240,255,.60);
+      text-align:center;
+      font-size: 12.5px;
+      line-height: 1.8;
     }
 
-    /* Floating WhatsApp */
+    /* Floating quick actions */
     .float{
       position: fixed;
       left: 14px;
@@ -427,445 +347,282 @@
       flex-direction: column;
     }
     .fab{
-      width: 54px; height: 54px;
+      width: 54px;
+      height: 54px;
       border-radius: 18px;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-weight: 950;
-      text-decoration:none;
-      border: 1px solid rgba(255,255,255,.14);
-      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      font-weight: 900;
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 18px 60px rgba(0,0,0,.45);
       backdrop-filter: blur(14px);
       transition: transform .12s ease, filter .12s ease;
+      background: rgba(255,255,255,.04);
+      color: rgba(234,240,255,.95);
     }
     .fab:hover{ transform: translateY(-2px); filter: brightness(1.05); }
-    .fab.wa{ background: rgba(37,211,102,.95); color:#07130b; }
-    .fab.ig{ background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color:white; }
-    .fab.tt{ background: rgba(17,17,17,.92); color:white; }
-
-    footer{
-      padding: 26px 0 40px;
-      color: rgba(245,247,255,.62);
-      text-align:center;
-      font-size: 13px;
-      line-height: 1.8;
+    .fab.wa{
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #07101f;
     }
 
-    /* Responsive */
     @media (max-width: 940px){
       .hero-grid{ grid-template-columns: 1fr; }
       .grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-      .pricing{ grid-template-columns: 1fr; }
-      .stats{ grid-template-columns: 1fr; }
-      .nav-links{ display:none; } /* נקי במובייל */
+      .contact{ grid-template-columns: 1fr; }
+      .nav{ display:none; }
     }
-
     @media (max-width: 600px){
-      body{ background-attachment: scroll; }
       .panel{ padding: 16px; }
-      .section{ padding: 14px 0; }
       .grid{ grid-template-columns: 1fr; }
-      .tradingview-widget-container{ height: 330px; }
-      .cta-top{ display:none; } /* משאיר מקום */
       .btn{ width: 100%; }
+      .actions{ display:none; }
     }
-.logo{
-  width: 44px;
-  height: 44px;
-  border-radius: 16px;
-  overflow: hidden;
-
-  padding: 0;                /* חשוב */
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.14);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.logo img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;         /* ממלא את כל הריבוע */
-  display:block;
-}
-
-
   </style>
 </head>
 
 <body>
-
-  <!-- NAV -->
-  <div class="nav">
+  <!-- TOPBAR -->
+  <div class="topbar">
     <div class="container">
-      <div class="nav-inner">
-      <div class="brand" aria-label="VTM">
-  <div class="logo" aria-hidden="true">
-    <img src="vtmlogo.jpeg" alt="VTM Logo" />
-  </div>
-  <span>VTM | קהילה למסחר והשקעות</span>
-</div>
-
-
-        <div class="nav-links" aria-label="ניווט">
-          <a class="chip" href="#value">למה VTM</a>
-          <a class="chip" href="#tracks">מסלולים</a>
-          <a class="chip" href="#community">קהילה</a>
-          <a class="chip" href="#process">איך זה עובד</a>
-          <a class="chip" href="#faq">שאלות</a>
-          <a class="chip" href="#contact">יצירת קשר</a>
+      <div class="topbar-inner">
+        <div class="brand" aria-label="VTM">
+          <div class="logo" aria-hidden="true">
+            <!-- החלף לוגו כאן -->
+            <img src="assets/logo.png" alt="VTM" onerror="this.style.display='none'; this.parentElement.textContent='VTM';" />
+          </div>
+          <div class="brand-title">
+            <b>VTM</b>
+            <span>קהילה למסחר והשקעות</span>
+          </div>
         </div>
 
-        <div class="cta-top">
-          <a class="btn primary" href="#contact">להצטרפות / שיחת היכרות</a>
-          <a class="btn ghost" href="#tv">גרף חי</a>
+        <nav class="nav" aria-label="ניווט">
+          <a href="#about">עלינו</a>
+          <a href="#what">מה תקבלו</a>
+          <a href="#process">איך זה עובד</a>
+          <a href="#faq">שאלות</a>
+          <a href="#contact">יצירת קשר</a>
+        </nav>
+
+        <div class="actions">
+          <a class="btn ghost" href="#about">להכיר את VTM</a>
+          <a class="btn primary" href="#contact">שיחת היכרות</a>
         </div>
       </div>
     </div>
   </div>
 
   <!-- HERO -->
-  <div class="hero">
+  <section class="hero" id="about">
     <div class="container">
       <div class="hero-grid">
         <div class="panel">
-          <h1>VTM — הבית של המשקיעים בישראל</h1>
-          <p>
-            קהילה ואקדמיה שמלמדת אותך לעבוד בצורה <b>מסודרת</b>: להבין מגמה ורמות, לבנות אסטרטגיה שמתאימה לך,
-            לנהל סיכונים בצורה מקצועית ולהפוך את המסחר להרגל עקבי — לא הימור.
+          <h1>ללמוד מסחר והשקעות בצורה מסודרת — עם שיטה.</h1>
+          <p class="lead">
+            VTM היא קהילה ואקדמיה שמיועדת למי שרוצה להתקדם בצורה מקצועית:
+            הבנה אמיתית של השוק, תהליך החלטות נקי, ניהול סיכונים ומשמעת.
           </p>
 
-          <div class="badges" id="value">
-            <span class="badge">📌 אסטרטגיה לפני כניסה</span>
-            <span class="badge">🧠 פסיכולוגיה ומשמעת</span>
-            <span class="badge">🛡️ ניהול סיכונים</span>
-            <span class="badge">📊 שוק אמריקאי + קריפטו</span>
+          <div class="hero-cta">
+            <a class="btn primary" href="#contact">אני רוצה שיחת היכרות</a>
+            <a class="btn" href="#what">מה מקבלים בקהילה</a>
           </div>
 
-          <div class="hero-actions">
-            <a class="btn primary" href="#contact">אני רוצה להצטרף לקהילה</a>
-            <a class="btn" href="#tracks">לראות את המסלולים</a>
-          </div>
-
-          <div class="stats" aria-label="סטטיסטיקות">
-            <div class="stat">
-              <div class="n">תהליך מסודר</div>
-              <div class="t">מסגרת שבועית ברורה: ידע → תרגול → בדיקה → שיפור.</div>
-            </div>
-            <div class="stat">
-              <div class="n">כללים פשוטים</div>
-              <div class="t">צ׳ק־ליסט לפני כל עסקה: מגמה, רמה, סיגנל, סטופ, יחס.</div>
-            </div>
-            <div class="stat">
-              <div class="n">קהילה תומכת</div>
-              <div class="t">ללמוד עם אנשים באותו מסלול — פחות רעש, יותר דיוק.</div>
-            </div>
+          <div class="fine">
+            מתאים למתחילים ולמי שכבר פעיל ורוצה לשפר דיוק, עקביות ותהליך.
           </div>
         </div>
 
         <div class="panel">
-          <div class="pill">מה יוצא לך מזה בפועל?</div>
-          <div class="grid" style="grid-template-columns: 1fr; gap:10px;">
-            <div class="card">
-              <h3>✅ פחות טעויות יקרות</h3>
-              <p>לומדים להפסיק “לנחש” ולהתחיל לעבוד עם תוכנית וסטופ ברור.</p>
-            </div>
-            <div class="card">
-              <h3>✅ שיטה שאתה יכול להתמיד בה</h3>
-              <p>מסגרת שמונעת כניסות רגשיות ומסדרת לך את הראש.</p>
-            </div>
-            <div class="card">
-              <h3>✅ קיצור דרך משמעותי</h3>
-              <p>לא לבזבז חודשים על בלגן — מקבל בסיס + תרגול + פידבק.</p>
-            </div>
+          <div class="section-head" style="margin:0 0 8px;">
+            <h2 style="margin:0; font-size:18px;">מה תצא מפה עם?</h2>
+            <p style="margin:0; font-size:13.5px;">תכל'ס, בלי רעש.</p>
           </div>
+          <ul class="list">
+            <li>הבנה של מבנה שוק ותנועה במחיר.</li>
+            <li>כללי כניסה/יציאה וניהול פוזיציה.</li>
+            <li>ניהול סיכונים ומשמעת עבודה.</li>
+            <li>שיטה ברורה שתוכל להתמיד בה לאורך זמן.</li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- TRACKS -->
-  <div class="section" id="tracks">
+  <!-- WHAT YOU GET -->
+  <section class="section" id="what">
     <div class="container">
       <div class="section-head">
         <div>
-          <h2>המסלולים שלנו</h2>
-          <p>מתאימים את התהליך לרמה שלך — לא “אותו דבר לכולם”.</p>
+          <h2>מה מקבלים ב־VTM</h2>
+          <p>תכנים, כלים וליווי — בפורמט ברור ומסודר.</p>
         </div>
       </div>
 
       <div class="grid">
         <div class="card">
-          <div class="pill">מתחילים</div>
-          <h3>יסודות שעושים סדר</h3>
-          <p>
-            מושגים, פתיחת חשבון, נרות, מגמה, רמות, בסיס לניהול סיכון ותכנון עסקה ראשון בצורה בטוחה.
-          </p>
+          <h3>מסלול למתחילים</h3>
+          <p>מושגים בסיסיים, בניית יסודות, הבנת שוק וצעדים ראשונים בצורה מסודרת.</p>
         </div>
-
         <div class="card">
-          <div class="pill">ביניים</div>
-          <h3>כניסות/יציאות מדויקות</h3>
-          <p>
-            חידוד סיגנלים, סינון עסקאות, עבודה עם צ׳ק־ליסט, שיפור יחס סיכון/סיכוי ועקביות.
-          </p>
+          <h3>מסלול למתקדמים</h3>
+          <p>דיוק כניסות/יציאות, שיפור אסטרטגיות וניהול פוזיציה ברמה גבוהה יותר.</p>
         </div>
-
         <div class="card">
-          <div class="pill">מתקדמים</div>
-          <h3>שדרוג ביצועים</h3>
-          <p>
-            אסטרטגיות, ניהול פוזיציה, תכנון שבועי, עבודה עם שגרה והפחתת טעויות פסיכולוגיות.
-          </p>
+          <h3>ניהול סיכונים ומשמעת</h3>
+          <p>תכנון לפני עסקה, יחס סיכון/סיכוי, טעויות נפוצות ומניעת החלטות מתוך רגש.</p>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- COMMUNITY -->
-  <div class="section" id="community">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>למה להצטרף לקהילה של VTM</h2>
-          <p>כי לבד זה לרוב נהיה רעש, קפיצות ושחיקה.</p>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <div class="pill">מסגרת</div>
-          <h3>שגרה שמחזיקה אותך יציב</h3>
-          <p>תהליך שבועי מסודר: למידה → יישום → בדיקה → שיפור. בלי “נעלם לי המוטיבציה”.</p>
-        </div>
-
-        <div class="card">
-          <div class="pill">סינון רעש</div>
-          <h3>פחות פומו, יותר איכות</h3>
-          <p>לומדים לזהות מה עסקאות ששוות זמן ומה לא. המטרה: להיות סלקטיביים.</p>
-        </div>
-
-        <div class="card">
-          <div class="pill">משמעת</div>
-          <h3>כללים לפני רגש</h3>
-          <p>ניהול סיכונים, סטופ ברור, ותיעוד — זה מה שעושה תוצאות לאורך זמן.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <!-- PROCESS -->
-  <div class="section" id="process">
+  <section class="section" id="process">
     <div class="container">
       <div class="section-head">
         <div>
-          <h2>איך זה עובד בפועל</h2>
-          <p>4 שלבים פשוטים שמייצרים סדר ותוצאות עקביות.</p>
+          <h2>איך זה עובד</h2>
+          <p>תהליך קצר וברור — ואז מתחילים לעבוד נכון.</p>
         </div>
       </div>
 
-      <div class="timeline">
+      <div class="steps">
         <div class="step">
-          <div class="dot">1</div>
+          <div class="num">1</div>
           <div>
-            <h4>שיחת היכרות קצרה</h4>
-            <p>מגדירים מטרה, רמה, זמן פנוי וסטייל מסחר שמתאים לך.</p>
+            <b>שיחת היכרות</b>
+            <div class="ans">מגדירים מטרה, רמת ניסיון ומה בדיוק אתה רוצה לשפר.</div>
           </div>
         </div>
 
         <div class="step">
-          <div class="dot">2</div>
+          <div class="num">2</div>
           <div>
-            <h4>מסלול מותאם + בסיס מסודר</h4>
-            <p>בונים לך תהליך עם סדר פעולות ברור: מה ללמוד, איך לתרגל ואיך למדוד.</p>
+            <b>התאמת מסלול</b>
+            <div class="ans">מתחיל/מתקדם — עם תוכנית ברורה וכלים פרקטיים.</div>
           </div>
         </div>
 
         <div class="step">
-          <div class="dot">3</div>
+          <div class="num">3</div>
           <div>
-            <h4>יישום בשוק עם צ׳ק־ליסט</h4>
-            <p>מגמה → רמות → סיגנל → סטופ → יחס סיכון/סיכוי. בלי קיצורי דרך.</p>
+            <b>יישום בפועל</b>
+            <div class="ans">כללים, ניהול סיכונים, משמעת ומעקב כדי להשתפר באמת.</div>
           </div>
         </div>
 
         <div class="step">
-          <div class="dot">4</div>
+          <div class="num">4</div>
           <div>
-            <h4>מעקב ושיפור</h4>
-            <p>תיעוד, ניתוח טעויות ושיפור עקביות לאורך זמן — זה המקום שבו “מתקדמים”.</p>
+            <b>שיפור עקביות</b>
+            <div class="ans">מדידה, תיקון טעויות, ושיטה שמחזיקה לאורך זמן.</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- TESTIMONIALS -->
-  <div class="section" id="proof">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>מה אנשים אוהבים ב־VTM</h2>
-          <p></p>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <div class="quote">“הפעם הראשונה שהרגשתי שיש לי סדר. לפני כל עסקה אני יודע איפה הסטופ ולמה נכנסתי.”</div>
-          <div class="who"></div>
-        </div>
-        <div class="card">
-          <div class="quote">“הכי חשוב: הפסיכולוגיה. למדתי לא לרדוף אחרי השוק ולהיות סבלני.”</div>
-          <div class="who"></div>
-        </div>
-        <div class="card">
-          <div class="quote">“הקהילה נותנת דחיפה. כשכולם עובדים עם צ׳ק־ליסט, אתה לא רוצה להיות זה שמחרטט.”</div>
-          <div class="who"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <!-- FAQ -->
-  <div class="section" id="faq">
+  <section class="section" id="faq">
     <div class="container">
       <div class="section-head">
         <div>
           <h2>שאלות נפוצות</h2>
-          <p>.</p>
+          <p>כדי שתדע למה לצפות.</p>
         </div>
       </div>
 
       <details>
-        <summary>
-          האם זה מתאים למי שאין לו ניסיון?
-          <span class="chev">⌄</span>
-        </summary>
-        <div class="ans">
-          כן. יש מסלול שמתחיל מהבסיס: מושגים, קריאת גרף, רמות, וניהול סיכונים לפני כניסה לעסקאות.
-        </div>
+        <summary>זה מתאים גם למתחילים?</summary>
+        <div class="ans">כן. יש מסלול יסודות שמתחיל מהבסיס ומבנה שיטה מסודרת.</div>
       </details>
 
       <details>
-        <summary>
-          כמה זמן ביום צריך להשקיע?
-          <span class="chev">⌄</span>
-        </summary>
-        <div class="ans">
-          תלוי במסלול, אבל המטרה היא תהליך ריאלי: סדר שבועי + תרגול קצר וקבוע. עדיף עקביות על מרתונים.
-        </div>
+        <summary>מה אם כבר יש לי ניסיון?</summary>
+        <div class="ans">אז מתמקדים בדיוק, ניהול פוזיציה, עקביות ומשמעת — כדי להעלות ביצועים.</div>
       </details>
 
       <details>
-        <summary>
-          אתם מבטיחים רווחים?
-          <span class="chev">⌄</span>
-        </summary>
-        <div class="ans">
-          לא. אין הבטחות בשוק ההון. אנחנו מלמדים שיטה, משמעת וניהול סיכונים כדי לשפר החלטות לאורך זמן.
-        </div>
-      </details>
-
-      <details>
-        <summary>
-          באילו שווקים מתמקדים?
-          <span class="chev">⌄</span>
-        </summary>
-        <div class="ans">
-          קריפטו, מניות, מדדים וסחורות — עם דגש על השוק האמריקאי. (אפשר להתאים לפי מה שאתה מלמד בפועל.)
-        </div>
+        <summary>איך יוצרים קשר?</summary>
+        <div class="ans">דרך וואטסאפ/שיחה או טופס קצר כאן למטה.</div>
       </details>
     </div>
-  </div>
-
-  <!-- TRADINGVIEW -->
-  <div class="section" id="tv">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <h2>גרף חי (TradingView)</h2>
-          <p></p>
-        </div>
-      </div>
-
-      <div class="tv">
-        <div class="tradingview-widget-container">
-          <div id="tradingview_chart"></div>
-        </div>
-      </div>
-    </div>
-  </div>
+  </section>
 
   <!-- CONTACT -->
-  <div class="section" id="contact">
+  <section class="section" id="contact">
     <div class="container">
       <div class="panel">
-        <div class="final-cta">
+        <div class="section-head" style="margin:0 0 10px;">
           <div>
-            <h2 style="margin:0 0 8px;">רוצה להצטרף לקהילה?</h2>
-            <div class="text">
-              שלח הודעה קצרה עם: <b>שם + רמה (מתחיל/ביניים/מתקדם) + מה המטרה שלך</b>.
-              נקבע שיחת היכרות קצרה ונבנה מסלול שמתאים לך.
-              <br><br>
-              <span style="color:rgba(245,247,255,.65); font-size:13px;">
-                ⚠️ תוכן לימודי בלבד — לא ייעוץ פיננסי.
-              </span>
+            <h2 style="margin:0;">יצירת קשר</h2>
+            <p>שיחת היכרות קצרה + התאמה למסלול.</p>
+          </div>
+        </div>
+
+        <div class="contact">
+          <div class="card">
+            <h3>פנייה מהירה</h3>
+            <p style="margin:0 0 12px; color:var(--muted); line-height:1.85;">
+              כתבו לנו שם + רמת ניסיון ומה המטרה שלכם — ונחזור אליכם.
+            </p>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn primary" target="_blank" rel="noopener"
+                 href="https://wa.me/972535758434?text=%D7%94%D7%99%D7%99%20VTM%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA.%20%D7%A9%D7%9D%3A%20____%20%D7%A8%D7%9E%D7%AA%20%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F%3A%20____%20%D7%9E%D7%98%D7%A8%D7%94%3A%20____">
+                וואטסאפ
+              </a>
+              <a class="btn" href="tel:+972535758434">שיחה</a>
+              <a class="btn ghost" href="#top">חזרה למעלה</a>
             </div>
           </div>
 
-          <div style="display:flex; gap:10px; flex-wrap:wrap; min-width:260px;">
-            <a class="btn primary" target="_blank" rel="noopener"
-               href="https://wa.me/972535758434?text=%D7%94%D7%99%D7%99%20VTM%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%A6%D7%98%D7%A8%D7%A3%20%D7%9C%D7%A7%D7%94%D7%99%D7%9C%D7%94.%20%D7%A9%D7%9E%D7%99%3A%20____%20%D7%94%D7%A8%D7%9E%D7%94%3A%20____%20%D7%95%D7%94%D7%9E%D7%98%D7%A8%D7%94%3A%20____">
-              וואטסאפ להצטרפות
-            </a>
-            <a class="btn" target="_blank" rel="noopener" href="https://instagram.com/vtm_on">אינסטגרם</a>
-            <a class="btn" target="_blank" rel="noopener" href="https://www.tiktok.com/@vtm_on">טיקטוק</a>
+          <div class="card">
+            <h3>טופס קצר</h3>
+            <form id="leadForm">
+              <input id="name" type="text" placeholder="שם מלא" required />
+              <input id="phone" type="tel" placeholder="טלפון" required />
+              <textarea id="msg" placeholder="מה המטרה שלך? (לימוד מהבסיס / שיפור עקביות / דיוק כניסות...)" required></textarea>
+              <button class="btn primary" type="submit">שליחה לוואטסאפ</button>
+              <div class="fine">*אין שרת. הטופס שולח הודעה לוואטסאפ.</div>
+            </form>
           </div>
+        </div>
+
+        <div class="fine" style="margin-top:12px;">
+          © <span id="y"></span> VTM — כל הזכויות שמורות.
         </div>
       </div>
 
       <footer>
-        © <span id="y"></span> VTM — All rights reserved.<br/>
-        <span style="opacity:.85;">Educational content only — not financial advice.</span>
+        הערה: התוכן באתר הוא מידע כללי ואינו ייעוץ פיננסי.
       </footer>
     </div>
-  </div>
+  </section>
 
-  <!-- Floating buttons -->
-  <div class="float" aria-label="כפתורי קשר">
+  <!-- Floating quick actions -->
+  <div class="float" aria-label="כפתורי קשר מהירים">
     <a class="fab wa" target="_blank" rel="noopener"
-       href="https://wa.me/972535758434?text=%D7%94%D7%99%D7%99%20VTM%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%A6%D7%98%D7%A8%D7%A3%20%D7%9C%D7%A7%D7%94%D7%99%D7%9C%D7%94%20%F0%9F%94%A5">WA</a>
-    <a class="fab ig" target="_blank" rel="noopener" href="https://instagram.com/vtm_on">IG</a>
-    <a class="fab tt" target="_blank" rel="noopener" href="https://www.tiktok.com/@vtm_on">TT</a>
+       href="https://wa.me/972535758434?text=%D7%94%D7%99%D7%99%20VTM%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA.%20%D7%A9%D7%9D%3A%20____%20%D7%95%D7%9E%D7%98%D7%A8%D7%94%3A%20____">
+      WA
+    </a>
+    <a class="fab" href="tel:+972535758434">📞</a>
   </div>
 
   <script>
-    // Year
     document.getElementById("y").textContent = new Date().getFullYear();
 
-    // TradingView init
-    (function(){
-      const s = document.createElement("script");
-      s.src = "https://s3.tradingview.com/tv.js";
-      s.onload = function(){
-        new TradingView.widget({
-          autosize: true,
-          symbol: "NASDAQ:QQQ",
-          interval: "D",
-          timezone: "Asia/Jerusalem",
-          theme: "dark",
-          style: "1",
-          locale: "en",
-          allow_symbol_change: true,
-          container_id: "tradingview_chart"
-        });
-      };
-      document.body.appendChild(s);
-    })();
+    // Send form to WhatsApp (no backend)
+    document.getElementById("leadForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const msg = document.getElementById("msg").value.trim();
+      const text = encodeURIComponent(`היי VTM, אני רוצה שיחת היכרות.\nשם: ${name}\nטלפון: ${phone}\nמטרה: ${msg}`);
+      window.open(`https://wa.me/972535758434?text=${text}`, "_blank");
+    });
   </script>
 </body>
 </html>
