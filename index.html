@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VTM | קהילה למסחר והשקעות</title>
-  <meta name="description" content="VTM — קהילה ואקדמיה למסחר והשקעות. תהליך עבודה מסודר, אסטרטגיה, משמעת וניהול סיכונים." />
+  <title>VTM | Trading & Investing Academy</title>
+  <meta name="description" content="VTM — a structured Trading & Investing Academy. Learn a clear process, risk management, and a repeatable trading system." />
 
   <style>
     :root{
-      /* Professional palette (dark + gold accent) */
+      /* Clean, professional dark + gold palette */
       --bg:#0b0f14;
       --bg2:#070a0e;
       --text:#eef2f7;
@@ -24,7 +24,7 @@
       --r: 16px;
       --max: 1180px;
 
-      --h1: clamp(34px, 4.8vw, 66px);
+      --h1: clamp(34px, 4.6vw, 64px);
       --h2: clamp(20px, 2.0vw, 28px);
     }
 
@@ -33,7 +33,7 @@
     body{
       margin:0;
       color:var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans Hebrew", "Heebo", sans-serif;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Inter", sans-serif;
       background:
         radial-gradient(1100px 640px at 10% 10%, rgba(201,168,106,.10), transparent 55%),
         radial-gradient(900px 560px at 85% 20%, rgba(201,168,106,.07), transparent 60%),
@@ -44,7 +44,7 @@
     a{ color:inherit; text-decoration:none; }
     .container{ max-width: var(--max); margin:0 auto; padding:0 18px; }
 
-    /* Header */
+    /* Top Bar */
     .top{
       position: sticky;
       top:0;
@@ -64,7 +64,7 @@
       display:flex;
       align-items:center;
       gap:12px;
-      min-width: 230px;
+      min-width: 240px;
     }
     .logo{
       width: 44px;
@@ -138,47 +138,10 @@
       border-color: rgba(255,255,255,.14);
     }
 
-    /* Ticker */
-    .ticker{
-      border-top: 1px solid rgba(255,255,255,.08);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      background: rgba(255,255,255,.03);
-      overflow:hidden;
-    }
-    .ticker-track{
-      display:flex;
-      gap:18px;
-      padding: 9px 0;
-      white-space: nowrap;
-      animation: slide 28s linear infinite;
-    }
-    @keyframes slide{
-      from{ transform: translateX(-10%); }
-      to{ transform: translateX(100%); }
-    }
-    .t-item{
-      display:flex; align-items:center; gap:10px;
-      font-size: 12.5px;
-      color: rgba(238,242,247,.86);
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.20);
-    }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: rgba(201,168,106,.9);
-      box-shadow: 0 0 0 3px rgba(201,168,106,.18);
-      flex:0 0 auto;
-    }
-    .chg.up{ color:#66f2b7; }
-    .chg.down{ color:#ff6b6b; }
-    .sep{ opacity:.55; }
-
     /* Hero (IMAGE BACKGROUND) */
     .hero{
       position: relative;
-      min-height: calc(100vh - 110px);
+      min-height: calc(100vh - 74px);
       display:flex;
       align-items: stretch;
     }
@@ -188,7 +151,7 @@
       background:
         linear-gradient(90deg, rgba(7,10,14,.92) 0%, rgba(7,10,14,.62) 55%, rgba(7,10,14,.92) 100%),
         linear-gradient(180deg, rgba(7,10,14,.45), rgba(7,10,14,.88)),
-        url("assets/hero.MP4?v=1");
+        url("assets/hero.jpg?v=1");
       background-size: cover;
       background-position: center;
       filter: saturate(1.03) contrast(1.03);
@@ -239,7 +202,7 @@
       margin:0;
       color: var(--muted);
       font-size: 16px;
-      max-width: 60ch;
+      max-width: 62ch;
       line-height: 1.95;
     }
     .hero-cta{
@@ -255,7 +218,7 @@
       color: rgba(238,242,247,.62);
     }
 
-    /* Stats */
+    /* Stats card */
     .stats{
       border-radius: var(--r);
       border: 1px solid rgba(255,255,255,.14);
@@ -299,7 +262,7 @@
       margin:0;
       color: var(--muted);
       font-size: 14px;
-      max-width: 70ch;
+      max-width: 72ch;
       line-height: 1.7;
     }
 
@@ -318,7 +281,7 @@
     }
     .bullets{
       margin: 0;
-      padding: 0 18px 0 0;
+      padding-left: 18px;
       color: rgba(238,242,247,.86);
       font-size: 15px;
       line-height: 1.9;
@@ -444,7 +407,7 @@
 </head>
 
 <body>
-  <!-- Header -->
+  <!-- Top -->
   <div class="top" id="top">
     <div class="container">
       <div class="top-row">
@@ -454,43 +417,21 @@
           </div>
           <div class="txt">
             <b>VTM</b>
-            <span>קהילה למסחר והשקעות</span>
+            <span>Trading & Investing Academy</span>
           </div>
         </div>
 
-        <nav class="nav" aria-label="ניווט">
-          <a href="#about">עלינו</a>
-          <a href="#program">מה מקבלים</a>
-          <a href="#process">איך זה עובד</a>
-          <a href="#faq">שאלות</a>
-          <a href="#contact">יצירת קשר</a>
+        <nav class="nav" aria-label="Navigation">
+          <a href="#about">About</a>
+          <a href="#program">What You Get</a>
+          <a href="#process">How It Works</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
         </nav>
 
         <div class="actions">
-          <a class="btn ghost" href="#program">לראות תוכנית</a>
-          <a class="btn primary" href="#contact">שיחת היכרות</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Ticker -->
-    <div class="ticker" aria-label="טיקר שווקים">
-      <div class="container">
-        <div class="ticker-track">
-          <div class="t-item"><span class="dot"></span><span>GOLD</span><span class="sep">•</span><span>4,527.16</span><span class="chg up">+0.29%</span></div>
-          <div class="t-item"><span class="dot"></span><span>OIL</span><span class="sep">•</span><span>78.40</span><span class="chg down">-0.18%</span></div>
-          <div class="t-item"><span class="dot"></span><span>QQQ</span><span class="sep">•</span><span>623.93</span><span class="chg up">+0.41%</span></div>
-          <div class="t-item"><span class="dot"></span><span>SPY</span><span class="sep">•</span><span>507.12</span><span class="chg up">+0.12%</span></div>
-          <div class="t-item"><span class="dot"></span><span>BTCUSD</span><span class="sep">•</span><span>88,710</span><span class="chg down">-0.33%</span></div>
-          <div class="t-item"><span class="dot"></span><span>TSLA</span><span class="sep">•</span><span>212.44</span><span class="chg up">+0.26%</span></div>
-
-          <!-- duplicate for loop feel -->
-          <div class="t-item"><span class="dot"></span><span>GOLD</span><span class="sep">•</span><span>4,527.16</span><span class="chg up">+0.29%</span></div>
-          <div class="t-item"><span class="dot"></span><span>OIL</span><span class="sep">•</span><span>78.40</span><span class="chg down">-0.18%</span></div>
-          <div class="t-item"><span class="dot"></span><span>QQQ</span><span class="sep">•</span><span>623.93</span><span class="chg up">+0.41%</span></div>
-          <div class="t-item"><span class="dot"></span><span>SPY</span><span class="sep">•</span><span>507.12</span><span class="chg up">+0.12%</span></div>
-          <div class="t-item"><span class="dot"></span><span>BTCUSD</span><span class="sep">•</span><span>88,710</span><span class="chg down">-0.33%</span></div>
-          <div class="t-item"><span class="dot"></span><span>TSLA</span><span class="sep">•</span><span>212.44</span><span class="chg up">+0.26%</span></div>
+          <a class="btn ghost" href="#program">View Program</a>
+          <a class="btn primary" href="#contact">Intro Call</a>
         </div>
       </div>
     </div>
@@ -508,46 +449,46 @@
             <img src="assets/logo.png" alt="VTM" onerror="this.remove(); this.parentElement.innerHTML='<span>VTM</span>';" />
           </div>
           <div class="meta">
-            <b>VTM — מסחר והשקעות</b>
-            <i>למידה מסודרת • ניהול סיכונים • שיטה</i>
+            <b>VTM — Trading & Investing</b>
+            <i>Structure • Risk Management • Consistency</i>
           </div>
         </div>
 
         <div class="hero-grid">
           <div>
-            <h1><span class="gold">האקדמיה</span> למסחר<br/>שמייצרת תהליך.</h1>
+            <h1><span class="gold">A structured</span> academy<br/>built for consistency.</h1>
             <p class="lead">
-              אנחנו בונים יסודות מקצועיים: הבנת השוק, אסטרטגיה, כללי כניסה/יציאה וניהול סיכונים —
-              כדי לעבוד בצורה מדויקת, עקבית ומסודרת.
+              VTM is designed for all levels — from beginners who want a clean start,
+              to experienced traders who want sharper execution, clearer rules, and better discipline.
             </p>
 
             <div class="hero-cta">
-              <a class="btn primary" href="#contact">להצטרפות / שיחת היכרות</a>
-              <a class="btn ghost" href="#program">לראות מה מקבלים</a>
+              <a class="btn primary" href="#contact">Join / Book an Intro Call</a>
+              <a class="btn ghost" href="#program">See What You Get</a>
             </div>
 
             <div class="hero-note">
-              *המידע באתר הוא מידע כללי בלבד ואינו ייעוץ פיננסי.
+              *This website provides general information only and is not financial advice.
             </div>
           </div>
 
-          <aside class="stats" aria-label="סטטיסטיקות">
-            <h3>במספרים</h3>
+          <aside class="stats" aria-label="Highlights">
+            <h3>Highlights</h3>
             <div class="stat">
-              <div><b>+1,000</b><br/><span>שעות לימוד</span></div>
-              <span>תוכן מסודר<br/>בשלבים</span>
+              <div><b>Clear</b><br/><span>step-by-step learning</span></div>
+              <span>From basics<br/>to execution</span>
             </div>
             <div class="stat">
-              <div><b>+5,000</b><br/><span>סטודנטים</span></div>
-              <span>קהילה פעילה<br/>ומכוונת תהליך</span>
+              <div><b>Rules</b><br/><span>for entries & exits</span></div>
+              <span>Less noise<br/>more clarity</span>
             </div>
             <div class="stat">
-              <div><b>18</b><br/><span>תהליכי לימוד</span></div>
-              <span>למתחילים<br/>ולמתקדמים</span>
+              <div><b>Risk</b><br/><span>management first</span></div>
+              <span>Plan before<br/>you trade</span>
             </div>
             <div class="stat">
-              <div><b>4</b><br/><span>שווקים</span></div>
-              <span>קריפטו • מניות<br/>מדדים • סחורות</span>
+              <div><b>Process</b><br/><span>that can be measured</span></div>
+              <span>Track, review<br/>improve</span>
             </div>
           </aside>
         </div>
@@ -560,37 +501,37 @@
   <section id="program">
     <div class="container">
       <div class="section-head">
-        <h2>מה מקבלים ב-VTM</h2>
-        <p class="sub">תהליך עבודה מקצועי, מסודר וברור — בלי רעש ובלי הבטחות.</p>
+        <h2>What You Get</h2>
+        <p class="sub">A professional, repeatable process — without hype, noise, or “get rich quick” promises.</p>
       </div>
 
       <div class="split">
         <div class="panel">
           <ul class="bullets">
-            <li><b>יסודות אמיתיים:</b> מבנה שוק, טרנדים, תמיכה/התנגדות, נפח ומומנטום.</li>
-            <li><b>אסטרטגיה:</b> הגדרת כללים, סינון עסקאות, תזמון נכון.</li>
-            <li><b>ניהול סיכונים:</b> יחס סיכון/סיכוי, סטופ, גודל פוזיציה ומשמעת.</li>
-            <li><b>תהליך החלטות:</b> שיטה שניתנת למדידה ושיפור לאורך זמן.</li>
+            <li><b>Market foundations:</b> trend structure, support/resistance, momentum & volume basics.</li>
+            <li><b>A trading plan:</b> rule-based setups, filters, and clean execution.</li>
+            <li><b>Risk management:</b> R:R, stop placement, position sizing, and discipline.</li>
+            <li><b>Decision framework:</b> a system you can review and improve over time.</li>
           </ul>
         </div>
 
         <div class="panel">
           <div class="mini-grid">
             <div class="mini">
-              <b>מסלול למתחילים</b>
-              <span>בסיס מסודר, כלים פרקטיים ושגרה נכונה.</span>
+              <b>Beginner Track</b>
+              <span>Start correctly with a clear learning path.</span>
             </div>
             <div class="mini">
-              <b>מסלול למתקדמים</b>
-              <span>דיוק כניסות/יציאות, תרחישים וניהול פוזיציה.</span>
+              <b>Advanced Track</b>
+              <span>Sharpen entries/exits and trade management.</span>
             </div>
             <div class="mini">
-              <b>קהילה ושגרה</b>
-              <span>סדר, עקביות ומעקב כדי לשפר ביצועים.</span>
+              <b>Community</b>
+              <span>Consistency through structure and routine.</span>
             </div>
           </div>
           <p class="sub" style="margin-top:12px;">
-       
+            Want a more “luxury / premium” tone? Tell me and I’ll rewrite the copy to match.
           </p>
         </div>
       </div>
@@ -601,28 +542,28 @@
   <section id="process">
     <div class="container">
       <div class="section-head">
-        <h2>איך זה עובד</h2>
-        <p class="sub">שיחת היכרות קצרה → התאמת מסלול → יישום → שיפור עקביות.</p>
+        <h2>How It Works</h2>
+        <p class="sub">Intro call → choose the right track → apply rules → review & improve consistency.</p>
       </div>
 
       <div class="split">
         <div class="panel">
-          <ol class="bullets" style="padding-right:22px;">
-            <li><b>שיחת היכרות:</b> מטרה, ניסיון ואתגרים.</li>
-            <li><b>התאמת מסלול:</b> תוכנית לפי רמה.</li>
-            <li><b>יישום:</b> כללים ברורים + ניהול סיכונים.</li>
-            <li><b>שיפור:</b> מדידה, תיקון ושדרוג עקביות.</li>
+          <ol class="bullets">
+            <li><b>Intro call:</b> goals, experience level, and where you want to improve.</li>
+            <li><b>Track selection:</b> beginner or advanced plan.</li>
+            <li><b>Execution:</b> rules + risk management.</li>
+            <li><b>Review:</b> track performance, remove mistakes, build discipline.</li>
           </ol>
         </div>
 
         <div class="panel">
-          <b style="display:block; margin-bottom:8px;">העיקרון שלנו</b>
+          <b style="display:block; margin-bottom:8px;">Our core principle</b>
           <div class="sub" style="font-size:15px;">
-            תוצאות מגיעות מתהליך. לא מניחושים, לא מריגוש.  
-            מי שעובד מסודר — מקבל החלטות נקיות יותר ומקטין טעויות.
+            Results come from process — not from luck and not from emotion.
+            A clean system creates cleaner decisions.
           </div>
           <div style="margin-top:14px;">
-            <a class="btn primary" href="#contact">לקבוע שיחת היכרות</a>
+            <a class="btn primary" href="#contact">Book an Intro Call</a>
           </div>
         </div>
       </div>
@@ -633,23 +574,23 @@
   <section id="faq">
     <div class="container">
       <div class="section-head">
-        <h2>שאלות נפוצות</h2>
-        <p class="sub">תשובות קצרות כדי שתדע למה לצפות.</p>
+        <h2>FAQ</h2>
+        <p class="sub">Quick answers so you know what to expect.</p>
       </div>
 
       <details>
-        <summary>זה מתאים גם למתחילים?</summary>
-        <div class="ans">כן. יש מסלול יסודות שמתחיל מהבסיס ובונה תהליך עבודה מסודר.</div>
+        <summary>Is this suitable for beginners?</summary>
+        <div class="ans">Yes. We start from fundamentals and build a structured routine step by step.</div>
       </details>
 
       <details>
-        <summary>ומה אם כבר יש לי ניסיון?</summary>
-        <div class="ans">אז מתמקדים בדיוק, ניהול פוזיציה, משמעת ושיפור עקביות.</div>
+        <summary>What if I already have experience?</summary>
+        <div class="ans">We focus on sharper execution, risk control, and improving consistency over time.</div>
       </details>
 
       <details>
-        <summary>איך יוצרים קשר?</summary>
-        <div class="ans">דרך וואטסאפ/שיחה או טופס קצר ששולח אליך הודעה לוואטסאפ.</div>
+        <summary>How do I contact you?</summary>
+        <div class="ans">WhatsApp, phone call, or the form below (it sends the message to WhatsApp).</div>
       </details>
     </div>
   </section>
@@ -658,42 +599,42 @@
   <section id="contact">
     <div class="container">
       <div class="section-head">
-        <h2>יצירת קשר</h2>
-        <p class="sub">השאר פרטים או פנה ישירות — נחזור אליך לשיחת היכרות קצרה.</p>
+        <h2>Contact</h2>
+        <p class="sub">Send your details or reach out directly — we’ll schedule a short intro call.</p>
       </div>
 
       <div class="contact">
         <div class="panel">
-          <b style="display:block; margin-bottom:8px;">פנייה מהירה</b>
+          <b style="display:block; margin-bottom:8px;">Direct</b>
           <p class="sub" style="margin-bottom:12px;">
-            כתוב: שם + רמת ניסיון + מה אתה רוצה לשפר.
+            Message format: name + experience level + what you want to improve.
           </p>
 
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
             <a class="btn primary" target="_blank" rel="noopener"
-               href="https://wa.me/972535758434?text=%D7%94%D7%99%D7%99%20VTM%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA.%20%D7%A9%D7%9D%3A%20____%20%D7%A0%D7%99%D7%A1%D7%99%D7%95%D7%9F%3A%20____%20%D7%9E%D7%98%D7%A8%D7%94%3A%20____">
-              וואטסאפ
+               href="https://wa.me/972535758434?text=Hi%20VTM%2C%20I%20want%20an%20intro%20call.%0AName%3A%20____%0AExperience%3A%20____%0AGoal%3A%20____">
+              WhatsApp
             </a>
-            <a class="btn" href="tel:+972535758434">שיחה</a>
-            <a class="btn ghost" href="#top">חזרה למעלה</a>
+            <a class="btn" href="tel:+972535758434">Call</a>
+            <a class="btn ghost" href="#top">Back to Top</a>
           </div>
 
           <p class="hero-note" style="margin-top:12px;">
-           
+            *No server needed — messages open in WhatsApp.
           </p>
         </div>
 
         <div class="panel">
-          <b style="display:block; margin-bottom:8px;">טופס קצר</b>
+          <b style="display:block; margin-bottom:8px;">Quick Form</b>
           <form id="leadForm">
-            <input id="name" type="text" placeholder="שם מלא" required />
-            <input id="phone" type="tel" placeholder="טלפון" required />
-            <textarea id="msg" placeholder="מה המטרה שלך? (לימוד מהבסיס / שיפור עקביות / דיוק כניסות...)" required></textarea>
-            <button class="btn primary" type="submit">שליחה לוואטסאפ</button>
+            <input id="name" type="text" placeholder="Full name" required />
+            <input id="phone" type="tel" placeholder="Phone" required />
+            <textarea id="msg" placeholder="What’s your goal? (start from scratch / improve consistency / better entries...)" required></textarea>
+            <button class="btn primary" type="submit">Send to WhatsApp</button>
           </form>
 
           <p class="hero-note" style="margin-top:10px;">
-            ⚠️ התוכן באתר הוא מידע כללי ואינו ייעוץ פיננסי.
+            ⚠️ This website provides general information only and is not financial advice.
           </p>
         </div>
       </div>
@@ -701,16 +642,16 @@
   </section>
 
   <footer>
-    © <span id="y"></span> VTM — כל הזכויות שמורות.
+    © <span id="y"></span> VTM — All rights reserved.
   </footer>
 
   <!-- Floating -->
-  <div class="float" aria-label="כפתורי קשר מהירים">
+  <div class="float" aria-label="Quick contact buttons">
     <a class="fab wa" target="_blank" rel="noopener"
-       href="https://wa.me/972535758434?text=%D7%94%D7%99%D7%99%20VTM%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%A9%D7%99%D7%97%D7%AA%20%D7%94%D7%99%D7%9B%D7%A8%D7%95%D7%AA.%20%D7%A9%D7%9D%3A%20____">
+       href="https://wa.me/972535758434?text=Hi%20VTM%2C%20I%20want%20an%20intro%20call.%20Name%3A%20____">
       WA
     </a>
-    <a class="fab" href="tel:+972535758434">📞</a>
+    <a class="fab" href="tel:+972535758434">☎</a>
   </div>
 
   <script>
@@ -722,9 +663,11 @@
       const name = document.getElementById("name").value.trim();
       const phone = document.getElementById("phone").value.trim();
       const msg = document.getElementById("msg").value.trim();
+
       const text = encodeURIComponent(
-        `היי VTM, אני רוצה שיחת היכרות.\nשם: ${name}\nטלפון: ${phone}\nמטרה: ${msg}`
+        `Hi VTM, I want an intro call.\nName: ${name}\nPhone: ${phone}\nGoal: ${msg}`
       );
+
       window.open(`https://wa.me/972535758434?text=${text}`, "_blank");
     });
   </script>
