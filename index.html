@@ -3,57 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VTM | Trading & Investing Academy</title>
-  <meta name="description" content="VTM — a structured Trading & Investing Academy. Learn a clear process, risk management, and a repeatable trading system." />
+  <title>VTM | Trading & Investing Community</title>
+  <meta name="description" content="VTM — Trading & Investing Academy for all levels. Build a structured process, improve consistency, and manage risk professionally." />
 
   <style>
     :root{
-      /* Clean, professional dark + gold palette */
-      --bg:#0b0f14;
-      --bg2:#070a0e;
-      --text:#eef2f7;
-      --muted: rgba(238,242,247,.72);
+      --bg:#070a0e;
+      --bg2:#0b0f14;
+      --ink:#eef2f7;
+      --muted:rgba(238,242,247,.72);
 
       --gold:#c9a86a;
       --gold2:#9f7f45;
 
-      --line: rgba(255,255,255,.12);
-      --glass: rgba(12,16,22,.62);
-      --shadow: 0 22px 70px rgba(0,0,0,.55);
+      --line:rgba(255,255,255,.14);
+      --glass:rgba(12,16,22,.62);
+      --glass2:rgba(12,16,22,.48);
 
-      --r: 16px;
-      --max: 1180px;
+      --shadow:0 24px 80px rgba(0,0,0,.55);
+      --r:18px;
+      --max:1180px;
 
-      --h1: clamp(34px, 4.6vw, 64px);
-      --h2: clamp(20px, 2.0vw, 28px);
+      --h1:clamp(34px,4.8vw,66px);
+      --h2:clamp(20px,2.0vw,28px);
+      --body:16px;
+      --small:13px;
     }
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      color:var(--text);
+      color:var(--ink);
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Inter", sans-serif;
       background:
         radial-gradient(1100px 640px at 10% 10%, rgba(201,168,106,.10), transparent 55%),
         radial-gradient(900px 560px at 85% 20%, rgba(201,168,106,.07), transparent 60%),
         linear-gradient(180deg, var(--bg), var(--bg2));
-      line-height: 1.8;
       overflow-x:hidden;
+      line-height:1.8;
     }
-    a{ color:inherit; text-decoration:none; }
-    .container{ max-width: var(--max); margin:0 auto; padding:0 18px; }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:0 18px}
 
-    /* Top Bar */
-    .top{
+    /* NAV */
+    .nav{
       position: sticky;
       top:0;
-      z-index:50;
+      z-index: 50;
       backdrop-filter: blur(14px);
       background: rgba(7,10,14,.72);
       border-bottom: 1px solid rgba(255,255,255,.10);
     }
-    .top-row{
+    .nav-inner{
       display:flex;
       align-items:center;
       justify-content:space-between;
@@ -64,33 +66,33 @@
       display:flex;
       align-items:center;
       gap:12px;
-      min-width: 240px;
+      min-width: 260px;
     }
     .logo{
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
+      width:44px;height:44px;border-radius:14px;
       overflow:hidden;
-      border: 1px solid rgba(255,255,255,.14);
+      border:1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.06);
       box-shadow: 0 14px 48px rgba(0,0,0,.35);
-      display:flex; align-items:center; justify-content:center;
-      font-weight: 900;
-      letter-spacing: .5px;
+      display:flex;align-items:center;justify-content:center;
+      flex:0 0 auto;
     }
-    .logo img{ width:100%; height:100%; object-fit: cover; display:block; }
-    .brand .txt{ display:flex; flex-direction:column; line-height: 1.12; }
-    .brand .txt b{ font-size: 14px; letter-spacing:.2px; }
-    .brand .txt span{ font-size: 12px; color: var(--muted); }
+    .logo img{width:100%;height:100%;object-fit:cover;display:block}
+    .brand span{
+      font-weight:900;
+      letter-spacing:.4px;
+      opacity:.95;
+      white-space:nowrap;
+    }
 
-    .nav{
+    .nav-links{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-      align-items:center;
       justify-content:center;
+      align-items:center;
     }
-    .nav a{
+    .chip{
       font-size: 13px;
       padding: 8px 10px;
       border-radius: 999px;
@@ -100,13 +102,13 @@
       transition: transform .12s ease, background .12s ease, border-color .12s ease;
       white-space: nowrap;
     }
-    .nav a:hover{
+    .chip:hover{
       transform: translateY(-1px);
       background: rgba(255,255,255,.07);
       border-color: rgba(255,255,255,.18);
     }
 
-    .actions{ display:flex; gap:10px; align-items:center; }
+    .cta-top{display:flex;gap:10px;align-items:center}
     .btn{
       display:inline-flex;
       align-items:center;
@@ -116,32 +118,60 @@
       border-radius: 14px;
       border: 1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.05);
-      color: var(--text);
+      color: var(--ink);
       font-weight: 800;
       cursor:pointer;
       white-space: nowrap;
       transition: transform .12s ease, filter .12s ease, background .12s ease, border-color .12s ease;
     }
-    .btn:hover{
-      transform: translateY(-1px);
-      filter: brightness(1.03);
-      background: rgba(255,255,255,.07);
-      border-color: rgba(255,255,255,.20);
-    }
+    .btn:hover{transform: translateY(-1px);filter:brightness(1.03);background: rgba(255,255,255,.07);border-color: rgba(255,255,255,.20)}
     .btn.primary{
       background: linear-gradient(135deg, rgba(201,168,106,.95), rgba(159,127,69,.95));
       color:#070a0e;
       border-color: rgba(201,168,106,.55);
     }
-    .btn.ghost{
-      background: transparent;
-      border-color: rgba(255,255,255,.14);
+    .btn.ig{
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      border-color: rgba(255,255,255,.18);
+      color:#fff;
     }
 
-    /* Hero (IMAGE BACKGROUND) */
+    /* TICKER (moving line) */
+    .ticker{
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+    }
+    .ticker-track{
+      display:flex;
+      gap:18px;
+      padding: 9px 0;
+      white-space: nowrap;
+      animation: slide 28s linear infinite;
+    }
+    @keyframes slide{
+      from{ transform: translateX(-10%); }
+      to{ transform: translateX(100%); }
+    }
+    .t-item{
+      display:flex; align-items:center; gap:10px;
+      font-size: 12.5px;
+      color: rgba(238,242,247,.86);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.20);
+    }
+    .dot{width:10px;height:10px;border-radius:999px;background: rgba(201,168,106,.9);box-shadow: 0 0 0 3px rgba(201,168,106,.18)}
+    .sep{opacity:.55}
+    .chg.up{color:#66f2b7}
+    .chg.down{color:#ff6b6b}
+
+    /* HERO */
     .hero{
       position: relative;
-      min-height: calc(100vh - 74px);
+      min-height: calc(100vh - 110px);
       display:flex;
       align-items: stretch;
     }
@@ -151,204 +181,119 @@
       background:
         linear-gradient(90deg, rgba(7,10,14,.92) 0%, rgba(7,10,14,.62) 55%, rgba(7,10,14,.92) 100%),
         linear-gradient(180deg, rgba(7,10,14,.45), rgba(7,10,14,.88)),
-        url("assets/1logo.jpeg?v=1");
+        url("assets/hero.jpg?v=1");
       background-size: cover;
       background-position: center;
       filter: saturate(1.03) contrast(1.03);
     }
-    .hero-inner{
-      position:relative;
-      width:100%;
-      padding: 34px 0;
-    }
+    .hero-inner{position:relative;width:100%;padding: 34px 0}
     .hero-grid{
       display:grid;
       grid-template-columns: 1.35fr .65fr;
       gap: 18px;
-      align-items: center;
+      align-items: stretch;
       margin-top: 10px;
     }
 
-    .hero-logo{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      margin-bottom: 14px;
-    }
-    .hero-logo .big{
-      width: 84px; height:84px;
-      border-radius: 22px;
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      box-shadow: var(--shadow);
-      display:flex; align-items:center; justify-content:center;
-      font-weight: 900;
-      letter-spacing: .6px;
-    }
-    .hero-logo .big img{ width:100%; height:100%; object-fit: cover; display:block; }
-    .hero-logo .meta{ display:flex; flex-direction:column; gap:3px; }
-    .hero-logo .meta b{ font-size: 14px; letter-spacing:.2px; color: rgba(238,242,247,.92); }
-    .hero-logo .meta i{ font-style: normal; color: var(--muted); font-size: 12.5px; }
-
-    h1{
-      margin:0 0 10px;
-      font-size: var(--h1);
-      line-height: 1.05;
-      letter-spacing: .2px;
-    }
-    .gold{ color: var(--gold); }
-    .lead{
-      margin:0;
-      color: var(--muted);
-      font-size: 16px;
-      max-width: 62ch;
-      line-height: 1.95;
-    }
-    .hero-cta{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      margin-top: 18px;
-      align-items:center;
-    }
-    .hero-note{
-      margin-top: 10px;
-      font-size: 12.5px;
-      color: rgba(238,242,247,.62);
-    }
-
-    /* Stats card */
-    .stats{
+    .panel{
       border-radius: var(--r);
-      border: 1px solid rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.12);
       background: linear-gradient(180deg, rgba(12,16,22,.62), rgba(12,16,22,.38));
       box-shadow: var(--shadow);
       padding: 18px;
     }
-    .stats h3{
-      margin:0 0 12px;
-      font-size: 14px;
+    h1{
+      margin:0 0 10px 0;
+      font-size: var(--h1);
+      line-height:1.05;
       letter-spacing:.2px;
-      color: rgba(238,242,247,.92);
     }
-    .stat{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:12px;
-      padding: 10px 0;
-      border-top: 1px solid rgba(255,255,255,.08);
-    }
-    .stat:first-of-type{ border-top:none; padding-top:0; }
-    .stat b{ font-size: 22px; line-height:1; color: rgba(238,242,247,.95); }
-    .stat span{ color: var(--muted); font-size: 13px; }
-
-    /* Sections */
-    section{ padding: 56px 0; }
-    .section-head{
-      display:flex;
-      align-items:flex-end;
-      justify-content:space-between;
-      gap:16px;
-      margin-bottom: 18px;
-    }
-    h2{
-      margin:0;
-      font-size: var(--h2);
-      letter-spacing: .2px;
-    }
-    .sub{
+    .gold{color:var(--gold)}
+    .lead{
       margin:0;
       color: var(--muted);
-      font-size: 14px;
-      max-width: 72ch;
-      line-height: 1.7;
+      font-size: 16px;
+      line-height:1.95;
+      max-width: 62ch;
     }
-
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      align-items:start;
-    }
-    .panel{
-      border-radius: var(--r);
-      border: 1px solid rgba(255,255,255,.12);
+    .pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .pill{
+      display:inline-flex;align-items:center;gap:10px;
+      font-size: 12.5px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.04);
-      box-shadow: 0 18px 70px rgba(0,0,0,.35);
-      padding: 18px;
+      color: rgba(238,242,247,.88);
+      white-space: nowrap;
     }
-    .bullets{
-      margin: 0;
-      padding-left: 18px;
-      color: rgba(238,242,247,.86);
-      font-size: 15px;
-      line-height: 1.9;
-    }
-    .bullets li{ margin: 10px 0; }
 
-    .mini-grid{
+    .hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top: 16px}
+    .hero-note{margin-top:10px;font-size:12.5px;color: rgba(238,242,247,.62)}
+
+    .cards{
       display:grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
+      grid-template-columns: repeat(2, minmax(0,1fr));
       gap: 12px;
-      margin-top: 12px;
+      margin-top: 14px;
     }
-    .mini{
-      border-radius: 14px;
+    .card{
+      border-radius: 16px;
       border: 1px solid rgba(255,255,255,.10);
       background: rgba(255,255,255,.03);
       padding: 14px;
     }
-    .mini b{ display:block; margin-bottom:6px; font-size: 15px; }
-    .mini span{ color: var(--muted); font-size: 13.5px; }
+    .card h3{margin:0 0 6px 0;font-size: 15px}
+    .card p{margin:0;color: var(--muted);font-size: 13.5px;line-height:1.8}
 
-    /* FAQ */
-    details{
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      padding: 12px 14px;
-    }
-    details + details{ margin-top: 10px; }
-    summary{
-      cursor:pointer;
-      list-style:none;
+    .checks{
       display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      font-weight: 800;
-      color: rgba(238,242,247,.92);
+      flex-direction: column;
+      gap: 12px;
     }
-    summary::-webkit-details-marker{ display:none; }
-    .ans{
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 14.5px;
-      line-height: 1.9;
+    .check{
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      padding: 14px;
+      display:flex;
+      gap: 12px;
+      align-items:flex-start;
     }
+    .check .mark{
+      width: 20px; height: 20px;
+      border-radius: 6px;
+      background: rgba(102,242,183,.14);
+      border: 1px solid rgba(102,242,183,.35);
+      display:flex;align-items:center;justify-content:center;
+      flex:0 0 auto;
+      margin-top: 2px;
+    }
+    .check b{display:block;margin-bottom:4px;font-size: 14px}
+    .check span{color: var(--muted);font-size: 13.5px;line-height:1.8}
 
-    /* Contact */
-    .contact{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      align-items:start;
+    /* SECTIONS */
+    section{padding: 56px 0}
+    .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom: 18px}
+    h2{margin:0;font-size: var(--h2);letter-spacing:.2px}
+    .sub{margin:0;color: var(--muted);font-size: 14px;max-width: 72ch;line-height:1.7}
+
+    .split{display:grid;grid-template-columns: 1fr 1fr;gap: 18px;align-items:start}
+
+    .steps{margin:0;padding-left: 18px;line-height:1.9;color: rgba(238,242,247,.86)}
+    .steps li{margin: 10px 0}
+
+    /* TradingView */
+    .tv-wrap{max-width: var(--max); margin: 12px auto 0}
+    .tradingview-widget-container{
+      height: 520px;
+      border-radius: 16px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      background: rgba(0,0,0,.18);
     }
-    input, textarea{
-      width:100%;
-      padding: 12px 12px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(0,0,0,.22);
-      color: var(--text);
-      outline:none;
-      font-family: inherit;
-      font-size: 14.5px;
-    }
-    textarea{ min-height: 120px; resize: vertical; }
-    input::placeholder, textarea::placeholder{ color: rgba(238,242,247,.55); }
+    #tradingview_chart{height:100%}
 
     footer{
       padding: 22px 0 32px;
@@ -359,7 +304,7 @@
       background: rgba(0,0,0,.18);
     }
 
-    /* Floating buttons */
+    /* Floating */
     .float{
       position: fixed;
       left: 14px;
@@ -389,85 +334,158 @@
       color:#070a0e;
       border-color: rgba(201,168,106,.55);
     }
+    .fab.ig{
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color:#fff;
+      border-color: rgba(255,255,255,.18);
+    }
 
     @media (max-width: 980px){
       .hero-grid{ grid-template-columns: 1fr; }
       .split{ grid-template-columns: 1fr; }
-      .mini-grid{ grid-template-columns: 1fr; }
-      .contact{ grid-template-columns: 1fr; }
-      .nav{ display:none; }
+      .cards{ grid-template-columns: 1fr; }
+      .nav-links{ display:none; }
+      .tradingview-widget-container{ height: 360px; }
     }
     @media (max-width: 620px){
-      .actions{ display:none; }
+      .cta-top{ display:none; }
       section{ padding: 42px 0; }
-      .hero-logo .big{ width:72px; height:72px; }
       .btn{ width: 100%; }
     }
   </style>
 </head>
 
 <body>
-  <!-- Top -->
-  <div class="top" id="top">
+
+  <!-- NAV -->
+  <div class="nav">
     <div class="container">
-      <div class="top-row">
+      <div class="nav-inner">
+
         <div class="brand" aria-label="VTM">
           <div class="logo" aria-hidden="true">
-            <img src="assets/1logo.jpeg" alt="VTM" onerror="this.style.display='none'; this.parentElement.textContent='VTM';" />
+            <img src="assets/1logo.jpeg" alt="VTM Logo"
+                 onerror="this.style.display='none'; this.parentElement.textContent='VTM';" />
           </div>
-          <div class="txt">
-            <b>VTM</b>
-            <span>Trading & Investing Academy</span>
-          </div>
+          <span>VTM | Trading & Investing</span>
         </div>
 
-        <nav class="nav" aria-label="Navigation">
-          <a href="#about">About</a>
-          <a href="#program">What You Get</a>
-          <a href="#process">How It Works</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <div class="nav-links" aria-label="Navigation">
+          <a class="chip" href="#value">Why VTM</a>
+          <a class="chip" href="#tracks">Tracks</a>
+          <a class="chip" href="#community">Community</a>
+          <a class="chip" href="#process">How it works</a>
+          <a class="chip" href="#tv">Charts</a>
+          <a class="chip" href="#contact">Contact</a>
+        </div>
 
-       
-       <div class="actions">
-         <a class="btn ghost" target="_blank" rel="noopener"
-   href="https://instagram.com/vtm_on">Instagram</a>
-          <a class="btn ghost" href="#program">View Program</a>
+        <div class="cta-top">
+          <a class="btn ig" target="_blank" rel="noopener" href="https://instagram.com/vtm_on">Instagram</a>
           <a class="btn primary" href="#contact">Intro Call</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Ticker line -->
+    <div class="ticker" aria-label="Markets ticker">
+      <div class="container">
+        <div class="ticker-track">
+          <div class="t-item"><span class="dot"></span><span>GOLD</span><span class="sep">•</span><span>4,527.16</span><span class="chg up">+0.29%</span></div>
+          <div class="t-item"><span class="dot"></span><span>OIL</span><span class="sep">•</span><span>78.40</span><span class="chg down">-0.18%</span></div>
+          <div class="t-item"><span class="dot"></span><span>QQQ</span><span class="sep">•</span><span>623.93</span><span class="chg up">+0.41%</span></div>
+          <div class="t-item"><span class="dot"></span><span>SPY</span><span class="sep">•</span><span>507.12</span><span class="chg up">+0.12%</span></div>
+          <div class="t-item"><span class="dot"></span><span>BTCUSD</span><span class="sep">•</span><span>88,710</span><span class="chg down">-0.33%</span></div>
+          <div class="t-item"><span class="dot"></span><span>TSLA</span><span class="sep">•</span><span>212.44</span><span class="chg up">+0.26%</span></div>
+
+          <!-- repeat for a smoother loop -->
+          <div class="t-item"><span class="dot"></span><span>GOLD</span><span class="sep">•</span><span>4,527.16</span><span class="chg up">+0.29%</span></div>
+          <div class="t-item"><span class="dot"></span><span>OIL</span><span class="sep">•</span><span>78.40</span><span class="chg down">-0.18%</span></div>
+          <div class="t-item"><span class="dot"></span><span>QQQ</span><span class="sep">•</span><span>623.93</span><span class="chg up">+0.41%</span></div>
+          <div class="t-item"><span class="dot"></span><span>SPY</span><span class="sep">•</span><span>507.12</span><span class="chg up">+0.12%</span></div>
+          <div class="t-item"><span class="dot"></span><span>BTCUSD</span><span class="sep">•</span><span>88,710</span><span class="chg down">-0.33%</span></div>
+          <div class="t-item"><span class="dot"></span><span>TSLA</span><span class="sep">•</span><span>212.44</span><span class="chg up">+0.26%</span></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Hero -->
-  <header class="hero" id="about">
+  <!-- HERO -->
+  <header class="hero" id="value">
     <div class="hero-bg" aria-hidden="true"></div>
 
     <div class="hero-inner">
       <div class="container">
-
-        <div class="hero-logo">
-          <div class="big" aria-hidden="true">
-            <img src="assets/1logo.jpeg" alt="VTM" onerror="this.remove(); this.parentElement.innerHTML='<span>VTM</span>';" />
-          </div>
-          <div class="meta">
-            <b>VTM — Trading & Investing</b>
-            <i>Structure • Risk Management • Consistency</i>
-          </div>
-        </div>
-
         <div class="hero-grid">
-          <div>
-            <h1><span class="gold">A structured</span> academy<br/>built for consistency.</h1>
+
+          <!-- Left: checks (like the old layout) -->
+          <div class="panel">
+            <div class="checks">
+              <div class="check">
+                <div class="mark">✓</div>
+                <div>
+                  <b>Less noise. More clarity.</b>
+                  <span>Learn to filter information and focus on what actually matters.</span>
+                </div>
+              </div>
+
+              <div class="check">
+                <div class="mark">✓</div>
+                <div>
+                  <b>A process you can stick to</b>
+                  <span>Step-by-step routine that makes execution cleaner and consistent.</span>
+                </div>
+              </div>
+
+              <div class="check">
+                <div class="mark">✓</div>
+                <div>
+                  <b>Risk management first</b>
+                  <span>Plan the trade, define risk, and trade with discipline.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: main hero text + small cards -->
+          <div class="panel">
+            <h1>VTM — <span class="gold">the home</span><br/>of investors.</h1>
+
             <p class="lead">
-              VTM is designed for all levels — from beginners who want a clean start,
-              to experienced traders who want sharper execution, clearer rules, and better discipline.
+              VTM is a Trading & Investing academy built for all levels — from beginners who want to start right,
+              to experienced traders who want sharper execution and stronger consistency.
+              We focus on crypto, stocks, indices, and commodities, with strong emphasis on the US market.
             </p>
 
-            <div class="hero-cta">
-              <a class="btn primary" href="#contact">Join / Book an Intro Call</a>
-              <a class="btn ghost" href="#program">See What You Get</a>
+            <div class="pill-row">
+              <div class="pill">📌 Market structure</div>
+              <div class="pill">🎯 Strategy & execution</div>
+              <div class="pill">🧠 Discipline</div>
+              <div class="pill">🛡️ Risk management</div>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="#contact">Join / Intro Call</a>
+              <a class="btn ig" target="_blank" rel="noopener" href="https://instagram.com/vtm_on">Instagram</a>
+            </div>
+
+            <div class="cards">
+              <div class="card">
+                <h3>Structured learning</h3>
+                <p>A clear path: foundations → rules → execution → review.</p>
+              </div>
+              <div class="card">
+                <h3>Practical tools</h3>
+                <p>Templates, checklists, and rules for decision-making.</p>
+              </div>
+              <div class="card">
+                <h3>Smart trade selection</h3>
+                <p>Better setups, fewer mistakes, more consistency.</p>
+              </div>
+              <div class="card">
+                <h3>Professional risk control</h3>
+                <p>Position sizing, stops, R:R — no emotional trading.</p>
+              </div>
             </div>
 
             <div class="hero-note">
@@ -475,170 +493,110 @@
             </div>
           </div>
 
-          <aside class="stats" aria-label="Highlights">
-            <h3>Highlights</h3>
-            <div class="stat">
-              <div><b>Clear</b><br/><span>step-by-step learning</span></div>
-              <span>From basics<br/>to execution</span>
-            </div>
-            <div class="stat">
-              <div><b>Rules</b><br/><span>for entries & exits</span></div>
-              <span>Less noise<br/>more clarity</span>
-            </div>
-            <div class="stat">
-              <div><b>Risk</b><br/><span>management first</span></div>
-              <span>Plan before<br/>you trade</span>
-            </div>
-            <div class="stat">
-              <div><b>Process</b><br/><span>that can be measured</span></div>
-              <span>Track, review<br/>improve</span>
-            </div>
-          </aside>
         </div>
-
       </div>
     </div>
   </header>
 
-  <!-- Program -->
-  <section id="program">
+  <!-- TRACKS -->
+  <section id="tracks">
     <div class="container">
       <div class="section-head">
-        <h2>What You Get</h2>
-        <p class="sub">A professional, repeatable process — without hype, noise, or “get rich quick” promises.</p>
+        <h2>What you get in VTM</h2>
+        <p class="sub">A clean learning system that builds skill, routine, and better decision-making.</p>
       </div>
 
       <div class="split">
         <div class="panel">
-          <ul class="bullets">
-            <li><b>Market foundations:</b> trend structure, support/resistance, momentum & volume basics.</li>
-            <li><b>A trading plan:</b> rule-based setups, filters, and clean execution.</li>
-            <li><b>Risk management:</b> R:R, stop placement, position sizing, and discipline.</li>
-            <li><b>Decision framework:</b> a system you can review and improve over time.</li>
-          </ul>
+          <h3 style="margin:0 0 10px 0;">Beginner Track</h3>
+          <p class="sub">Core foundations: market basics, trading concepts, and your first structured steps.</p>
+
+          <h3 style="margin:16px 0 10px 0;">Advanced Track</h3>
+          <p class="sub">Sharpen performance: better entries/exits, strategy refinement, and position management.</p>
+
+          <h3 style="margin:16px 0 10px 0;">Risk & Discipline</h3>
+          <p class="sub">Trade planning, R:R, common mistakes, and avoiding emotional decisions.</p>
         </div>
 
-        <div class="panel">
-          <div class="mini-grid">
-            <div class="mini">
-              <b>Beginner Track</b>
-              <span>Start correctly with a clear learning path.</span>
-            </div>
-            <div class="mini">
-              <b>Advanced Track</b>
-              <span>Sharpen entries/exits and trade management.</span>
-            </div>
-            <div class="mini">
-              <b>Community</b>
-              <span>Consistency through structure and routine.</span>
-            </div>
-          </div>
-          <p class="sub" style="margin-top:12px;">
-           
+        <div class="panel" id="community">
+          <h3 style="margin:0 0 10px 0;">Community & Real Practice</h3>
+          <p class="sub">
+            Crypto, stocks, indices, and commodities — with a strong US market focus and real examples.
+            We work with a structured routine so you always know why you enter a trade and what you expect to happen.
           </p>
+          <div class="hero-actions" style="margin-top:14px">
+            <a class="btn primary" href="#contact">Book an Intro Call</a>
+            <a class="btn ig" target="_blank" rel="noopener" href="https://instagram.com/vtm_on">Follow on Instagram</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Process -->
+  <!-- PROCESS -->
   <section id="process">
     <div class="container">
       <div class="section-head">
-        <h2>How It Works</h2>
-        <p class="sub">Intro call → choose the right track → apply rules → review & improve consistency.</p>
+        <h2>How it works</h2>
+        <p class="sub">Simple steps — from intro call to a system you can keep improving.</p>
       </div>
 
       <div class="split">
         <div class="panel">
-          <ol class="bullets">
-            <li><b>Intro call:</b> goals, experience level, and where you want to improve.</li>
-            <li><b>Track selection:</b> beginner or advanced plan.</li>
-            <li><b>Execution:</b> rules + risk management.</li>
-            <li><b>Review:</b> track performance, remove mistakes, build discipline.</li>
+          <ol class="steps">
+            <li>Short intro call — goals, experience, and your starting point.</li>
+            <li>Choose a track (Beginner / Advanced).</li>
+            <li>Apply rules and manage risk with a clear plan.</li>
+            <li>Review performance and build long-term consistency.</li>
           </ol>
         </div>
 
-        <div class="panel">
-          <b style="display:block; margin-bottom:8px;">Our core principle</b>
-          <div class="sub" style="font-size:15px;">
-            Results come from process — not from luck and not from emotion.
-            A clean system creates cleaner decisions.
-          </div>
-          <div style="margin-top:14px;">
-            <a class="btn primary" href="#contact">Book an Intro Call</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        <div class="panel" id="contact">
+          <h3 style="margin:0 0 10px 0;">Contact</h3>
+          <p class="sub">Message us directly and we’ll schedule a short intro call.</p>
 
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container">
-      <div class="section-head">
-        <h2>FAQ</h2>
-        <p class="sub">Quick answers so you know what to expect.</p>
-      </div>
-
-      <details>
-        <summary>Is this suitable for beginners?</summary>
-        <div class="ans">Yes. We start from fundamentals and build a structured routine step by step.</div>
-      </details>
-
-      <details>
-        <summary>What if I already have experience?</summary>
-        <div class="ans">We focus on sharper execution, risk control, and improving consistency over time.</div>
-      </details>
-
-      <details>
-        <summary>How do I contact you?</summary>
-        <div class="ans">WhatsApp, phone call, or the form below (it sends the message to WhatsApp).</div>
-      </details>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-head">
-        <h2>Contact</h2>
-        <p class="sub">Send your details or reach out directly — we’ll schedule a short intro call.</p>
-      </div>
-
-      <div class="contact">
-        <div class="panel">
-          <b style="display:block; margin-bottom:8px;">Direct</b>
-          <p class="sub" style="margin-bottom:12px;">
-            Message format: name + experience level + what you want to improve.
-          </p>
-
-          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <div class="hero-actions" style="margin-top:14px">
             <a class="btn primary" target="_blank" rel="noopener"
                href="https://wa.me/972535758434?text=Hi%20VTM%2C%20I%20want%20an%20intro%20call.%0AName%3A%20____%0AExperience%3A%20____%0AGoal%3A%20____">
               WhatsApp
             </a>
             <a class="btn" href="tel:+972535758434">Call</a>
-            <a class="btn ghost" href="#top">Back to Top</a>
+            <a class="btn ig" target="_blank" rel="noopener" href="https://instagram.com/vtm_on">Instagram</a>
           </div>
 
-          <p class="hero-note" style="margin-top:12px;">
-            *No server needed — messages open in WhatsApp.
-          </p>
+          <div class="hero-note" style="margin-top:12px">
+            Phone: +972 53-575-8434
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="panel">
-          <b style="display:block; margin-bottom:8px;">Quick Form</b>
-          <form id="leadForm">
-            <input id="name" type="text" placeholder="Full name" required />
-            <input id="phone" type="tel" placeholder="Phone" required />
-            <textarea id="msg" placeholder="What’s your goal? (start from scratch / improve consistency / better entries...)" required></textarea>
-            <button class="btn primary" type="submit">Send to WhatsApp</button>
-          </form>
+  <!-- CHARTS (TradingView) -->
+  <section id="tv">
+    <div class="container">
+      <div class="section-head">
+        <h2>Charts</h2>
+        <p class="sub">Interactive chart widget (you can change the symbol).</p>
+      </div>
 
-          <p class="hero-note" style="margin-top:10px;">
-            ⚠️ This website provides general information only and is not financial advice.
-          </p>
+      <div class="tv-wrap">
+        <div class="tradingview-widget-container">
+          <div id="tradingview_chart"></div>
+          <script src="https://s3.tradingview.com/tv.js"></script>
+          <script>
+            new TradingView.widget({
+              "autosize": true,
+              "symbol": "NASDAQ:QQQ",
+              "interval": "D",
+              "timezone": "Asia/Jerusalem",
+              "theme": "dark",
+              "style": "1",
+              "locale": "en",
+              "allow_symbol_change": true,
+              "container_id": "tradingview_chart"
+            });
+          </script>
         </div>
       </div>
     </div>
@@ -648,33 +606,15 @@
     © <span id="y"></span> VTM — All rights reserved.
   </footer>
 
-  <!-- Floating -->
-  <div class="float" aria-label="Quick contact buttons">
-    <a class="fab" target="_blank" rel="noopener" href="https://instagram.com/vtm_on">IG</a>
-
+  <!-- Floating buttons -->
+  <div class="float" aria-label="Quick contact">
     <a class="fab wa" target="_blank" rel="noopener"
-       href="https://wa.me/972535758434?text=Hi%20VTM%2C%20I%20want%20an%20intro%20call.%20Name%3A%20____">
-      WA
-    </a>
-    <a class="fab" href="tel:+972535758434">☎</a>
+       href="https://wa.me/972535758434?text=Hi%20VTM%2C%20I%20want%20an%20intro%20call.%20Name%3A%20____">WA</a>
+    <a class="fab ig" target="_blank" rel="noopener" href="https://instagram.com/vtm_on">IG</a>
   </div>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
-
-    // WhatsApp form (no backend)
-    document.getElementById("leadForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const msg = document.getElementById("msg").value.trim();
-
-      const text = encodeURIComponent(
-        `Hi VTM, I want an intro call.\nName: ${name}\nPhone: ${phone}\nGoal: ${msg}`
-      );
-
-      window.open(`https://wa.me/972535758434?text=${text}`, "_blank");
-    });
   </script>
 </body>
 </html>
